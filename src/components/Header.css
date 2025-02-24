@@ -1,0 +1,116 @@
+.custom-navbar {
+    background-color: white !important;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 1rem;
+  }
+  
+  /* Add a smooth hover effect */
+  .custom-navbar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 6px 15px #6a0dad;
+  }
+  
+  /* Logo Styling */
+  .logo {
+    width: 60px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Responsive Logo Sizing */
+  @media (max-width: 768px) {
+    .logo {
+      width: 50px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      width: 40px;
+      height: 35px;
+    }
+  }
+  
+  /* Logo hover effect */
+  .logo:hover {
+    transform: rotate(10deg);
+  }
+  
+  /* Company Name */
+  .company-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6a0dad;
+    margin-left: 10px;
+  }
+  
+  /* Adjust company name size for smaller screens */
+  @media (max-width: 768px) {
+    .company-name {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .company-name {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Navigation container */
+  .navbar-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  /* Navigation links */
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555 !important;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 12px;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #6a0dad !important;
+  }
+  
+  /* LMS Button */
+  .lms-button {
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: background 0.3s ease-in-out;
+    margin-left: 20px;
+  }
+  
+  /* Ensure LMS button doesn't overflow */
+  @media (max-width: 992px) {
+    .lms-button {
+      margin-left: 10px;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* When screen gets smaller, stack nav items & button */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .lms-button {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
