@@ -1,73 +1,88 @@
 /* Global Background Shadow on Hover */
-body.card-hovered {
-    box-shadow: 0px 0px 30px 10px rgba(106, 13, 173, 0.5);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  /* Roadmap Card Styling */
-  .roadmap-card {
-    border-left: 5px solid #6a0dad;
-    border-radius: 10px;
-    padding: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  .roadmap-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 15px rgba(106, 13, 173, 0.5);
-  }
-  
-  /* Course List Styling */
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  ul li {
-    background: #f8f9fa;
-    padding: 8px 12px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  }
-  
-  ul li:hover {
-    background: #6a0dad;
-    color: white;
-  }
-  
-  /* Course Cards */
-  .course-card {
-    cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  .course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(106, 13, 173, 0.5);
-  }
-  
-  /* Course Image */
-  .course-img {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Apply Global Hover Effect */
-  .course-card:hover ~ body {
-    box-shadow: 0px 0px 30px 10px rgba(106, 13, 173, 0.5);
-  }
-  
-  /* Button Styling */
-  button {
-    transition: all 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #6a0dad !important;
-    color: white !important;
-    transform: scale(1.05);
-  }
-  
+.card-hover-effect {
+  box-shadow: 0px 0px 30px 10px rgba(106, 13, 173, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Roadmap Card Styling */
+.roadmap-card {
+  border-left: 5px solid #6a0dad;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.roadmap-card-hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(106, 13, 173, 0.5);
+}
+
+/* Course List Styling */
+.course-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.course-list-item {
+  background: #f8f9fa;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.course-list-item:hover {
+  background: #6a0dad;
+  color: white;
+}
+
+/* Course Cards */
+.course-card {
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.course-card-hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(106, 13, 173, 0.5);
+}
+
+/* Course Image */
+.course-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Apply Global Hover Effect */
+.course-card-global-hover {
+  box-shadow: 0px 0px 30px 10px rgba(106, 13, 173, 0.5);
+}
+
+/* Button Styling */
+.button-effect {
+  transition: all 0.3s ease-in-out;
+}
+
+.button-hover-effect {
+  background-color: #6a0dad !important;
+  color: white !important;
+  transform: scale(1.05);
+}
+/* Custom Enroll Button */
+.enroll-button {
+  background-color: #6a0dad !important;
+  border: none;
+  width: 200px; /* Adjust width */
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.enroll-button:hover {
+  background-color: #5a0c99 !important;
+  transform: scale(1.05);
+}
