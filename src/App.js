@@ -5,10 +5,12 @@ import Footer from "./components/Footer";
 import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
 import CustomCursor from "./components/CustomCursor";
-// import Internships from "./pages/Internships";
-// import Jobs from "./pages/Jobs";
-// import Contact from "./pages/Contact";
+import Internships from "./pages/Internships";
+import AddInternship from "./components/AddInternship";
+import Certi from "./pages/Certi";
+import Contact from "./pages/Contact";
 // import NotFound from "./pages/NotFound";
+import Certificate from "./pages/Certificate";
 
 function App() {
   return (
@@ -19,9 +21,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:courseId" element={<CourseDetails />} />
-        {/* <Route path="/internships" element={<Internships />} />
-        <Route path="/jobs" element={<Jobs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/internships" element={<Internships />} />
+        <Route path="/add-internship" element={<AddInternship />} />
+        <Route path="/verify/certificate" element={<Certi />} />
+        <Route path="/download/certificate" element={<Certi />} />
+        <Route path="/certificate/:certiid" element={<Certi />} />
+        <Route path="/certificates" element={<Certificate />} />
+        {/* <Route path="/jobs" element={<Jobs />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer/>

@@ -1,0 +1,22 @@
+
+.certificate-container {
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .cd-box{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  @media (max-width: 768px) {
+    .certificate-container {
+      padding: 10px;
+    }
+    
+    .key-skills-section {
+      margin-bottom: 20px;
+    }
+    
+    .certificate-content {
+      text-align: center;
+    }
+  }

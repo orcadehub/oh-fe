@@ -1,0 +1,23 @@
+.internship-card {
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.internship-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(106, 13, 173, 0.5);
+}
+
+.company-logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.internship-details p {
+  margin-bottom: 8px;
+}
+
+.apply-button {
+  min-width: 150px;
+  text-align: center;
+}

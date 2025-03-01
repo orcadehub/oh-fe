@@ -1,0 +1,22 @@
+@media print {
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .certificate-container {
+      width: 100%;
+      height: auto;
+      background: white !important; /* Ensure proper background color */
+      box-shadow: none !important; /* Remove shadows for printing */
+    }
+  
+    .certificate-content {
+      border: 2px solid black; /* Ensure visibility in print */
+    }
+  
+    .print-hide {
+      display: none !important; /* Hide unnecessary UI elements */
+    }
+  }
+  
