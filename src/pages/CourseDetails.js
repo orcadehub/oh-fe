@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./CourseDetails.css";
 import axios from "axios";
+import config from "../config";
 
 const courseData = {
   // MERN Stack (6 Months)
@@ -322,7 +323,13 @@ const courseData = {
   },
 };
 
+
 const CourseDetails = () => {
+
+  const baseURL =
+  process.env.NODE_ENV === "development"
+    ? config.LOCAL_BASE_URL
+    : config.BASE_URL;
 
 const [responseId, setResponseId] = useState("");
   const [responseState, setResponseState] = useState([]);
@@ -354,7 +361,7 @@ const [responseId, setResponseId] = useState("");
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:3500/orders",
+      url: `${baseURL}/orders`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -410,7 +417,7 @@ const [responseId, setResponseId] = useState("");
     const paymentId = e.target.paymentId.value;
 
     axios
-      .get(`http://localhost:3500/payment/${paymentId}`)
+      .get( `${baseURL}/payment/${paymentId}`)
       .then((response) => {
         console.log(response.data);
         setResponseState(response.data);
