@@ -18,16 +18,18 @@ const Internships = () => {
   useEffect(() => {
     const fetchInternships = async () => {
       try {
-        const response = await axios.get(`${baseURL}/internship`); // ✅ API endpoint
-        setInternships(response.data); // ✅ Store response data
+        const response = await axios.get(`${baseURL}/internship`, {
+          headers: { "Content-Type": "application/json" }, // ✅ Ensure proper headers
+          withCredentials: true, // ✅ Allow sending cookies/tokens
+        });
+        setInternships(response.data);
       } catch (error) {
-        console.error("Error fetching internships:", error);
+        console.error("🚨 Error fetching internships:", error.response?.data || error.message);
         setError("Failed to load internships. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
-
     fetchInternships();
   }, []);
 
