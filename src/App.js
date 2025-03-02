@@ -11,6 +11,7 @@ import Certi from "./pages/Certi";
 import Contact from "./pages/Contact";
 // import NotFound from "./pages/NotFound";
 import Certificate from "./pages/Certificate";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/download/certificate" element={<Certi />} />
         <Route path="/certificate/:certiid" element={<Certi />} />
         <Route path="/certificates" element={<Certificate />} />
+        <Route path="/payment" element={<Payment />} />
         {/* <Route path="/jobs" element={<Jobs />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>

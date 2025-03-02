@@ -48,10 +48,10 @@ const Footer = () => {
             <p>© {new Date().getFullYear()} OrcadeHub. All Rights Reserved.</p>
           </Col>
           <Col md={6} className="social-icons">
-            <a href="#" target="_blank"><FaLinkedin /></a>
-            <a href="#" target="_blank"><FaInstagram /></a>
-            <a href="#" target="_blank"><FaFacebook /></a>
-            <a href="#" target="_blank"><FaTwitter /></a>
+            <a href="https://www.linkedin.com/company/orcadehub" target="_blank"><FaLinkedin /></a>
+            <a href="https://www.instagram.com/orcadehub" target="_blank"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/orcadehub" target="_blank"><FaFacebook /></a>
+            <a href="https://www.linkedin.com/company/orcadehub" target="_blank"><FaTwitter /></a>
           </Col>
         </Row>
       </Container>

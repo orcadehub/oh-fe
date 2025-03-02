@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./CourseDetails.css";
+import axios from "axios";
 
 const courseData = {
   // MERN Stack (6 Months)
@@ -322,6 +323,103 @@ const courseData = {
 };
 
 const CourseDetails = () => {
+
+const [responseId, setResponseId] = useState("");
+  const [responseState, setResponseState] = useState([]);
+
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+
+      script.src = src;
+
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+
+  const createRazorpayOrder = (amount) => {
+    let data = JSON.stringify({
+      amount: amount * 100,
+      currency: "INR",
+    });
+
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "http://localhost:3500/orders",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        handleRazorpayScreen(response.data.amount);
+      })
+      .catch((error) => {
+        console.log("error at", error);
+      });
+  };
+
+  const handleRazorpayScreen = async (amount) => {
+    const res = await loadScript("https:/checkout.razorpay.com/v1/checkout.js");
+
+    if (!res) {
+      alert("Some error at razorpay screen loading");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_KZWfJv1KGDv6La",
+      amount: amount,
+      currency: "INR",
+      name: "OrcadeHub",
+      description: "payment to OrcadeHub",
+      image:
+        "https://www.orcadehub.com/static/media/log.a4a397196354c6736694.png",
+      handler: function (response) {
+        setResponseId(response.razorpay_payment_id);
+      },
+      prefill: {
+        name: "papaya coders",
+        email: "papayacoders@gmail.com",
+      },
+      theme: {
+        color: "#6a0dad",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
+  const paymentFetch = (e) => {
+    e.preventDefault();
+
+    const paymentId = e.target.paymentId.value;
+
+    axios
+      .get(`http://localhost:3500/payment/${paymentId}`)
+      .then((response) => {
+        console.log(response.data);
+        setResponseState(response.data);
+      })
+      .catch((error) => {
+        console.log("error occures", error);
+      });
+  };
+
   const { courseId } = useParams();
   const course = courseData[courseId];
 
@@ -459,7 +557,7 @@ const CourseDetails = () => {
           </Button>
           <Button
             className="enroll-button"
-            onClick={handleUPIPayment}
+            onClick={() => createRazorpayOrder(100)}
           >
             Proceed to Payment
           </Button>
