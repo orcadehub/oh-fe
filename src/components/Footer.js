@@ -26,6 +26,7 @@ const Footer = () => {
             <p><FaPhone /> <strong> Ajith Kumar ( CEO ):</strong> +91 7093012101</p>
             <p><FaPhone /> <strong> Srinivas ( R&D ):</strong> +91 96182 27559</p>
             <p><FaPhone /> <strong> Chandrika ( Director ):</strong> +91 8688439185</p>
+            <p><FaPhone /> <strong> Bhavana ( Technical Lead ):</strong> +91 6301396996</p>
             <p><FaEnvelope /> <strong>Email:</strong> <a href="mailto:ceo@orcadehub.com">ceo@orcadehub.com</a></p>
           </Col>
 
