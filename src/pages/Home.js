@@ -130,7 +130,7 @@ const Home = () => {
                 <Card className="stat-card">
                   <FaBriefcase className="stat-icon" />
                   <Card.Body>
-                    <Card.Title>200+</Card.Title>
+                    <Card.Title>50+</Card.Title>
                     <Card.Text>Clients Served</Card.Text>
                   </Card.Body>
                 </Card>
@@ -141,7 +141,7 @@ const Home = () => {
                 <Card className="stat-card">
                   <FaLaptopCode className="stat-icon" />
                   <Card.Body>
-                    <Card.Title>1000+</Card.Title>
+                    <Card.Title>200+</Card.Title>
                     <Card.Text>Successful Interns</Card.Text>
                   </Card.Body>
                 </Card>
@@ -152,7 +152,7 @@ const Home = () => {
                 <Card className="stat-card">
                   <FaUniversity className="stat-icon" />
                   <Card.Body>
-                    <Card.Title>50+</Card.Title>
+                    <Card.Title>20+</Card.Title>
                     <Card.Text>College Partnerships</Card.Text>
                   </Card.Body>
                 </Card>
@@ -165,7 +165,7 @@ const Home = () => {
       {/* Testimonials Slider */}
       <section className="testimonials-section">
         <Container>
-          <h2 className="text-center">What Colleges Say About Us</h2>
+          <h2 className="text-center">What Students Say About Us</h2>
           <Slider {...sliderSettings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-slide">
