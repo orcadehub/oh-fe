@@ -1,13 +1,26 @@
 import { Navbar, Nav, Container, Button, NavDropdown } from "react-bootstrap";
 import Logo from "../../assets/log.png";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./LmsHeader.css"; // Import CSS file
 
 const LmsHeader = () => {
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+
+  // Handle Logout
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token
+    setIsLoggedIn(false);
+    navigate("/lms/login"); // Redirect to login
+  };
+
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem("token"));
+  }, []);
 
   return (
-    <Navbar expand="lg" className="custom-navbar sticky-top shadow">
+    <Navbar expand="lg" className="custom-navbar sticky-top">
       <Container>
         {/* Logo & Company Name */}
         <Navbar.Brand onClick={() => navigate("/lms")} className="d-flex align-items-center" style={{ cursor: "pointer" }}>
@@ -21,10 +34,9 @@ const LmsHeader = () => {
         {/* Navigation Links */}
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-
             {/* Courses Dropdown */}
             <NavDropdown title="Courses" id="courses-dropdown">
-              <NavDropdown.Item onClick={() => navigate("/courses")}>All Courses</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/lms/courses")}>All Courses</NavDropdown.Item>
               <NavDropdown.Item onClick={() => navigate("/courses/enrolled")}>My Enrolled Courses</NavDropdown.Item>
               <NavDropdown.Item onClick={() => navigate("/courses/upcoming")}>Upcoming Courses</NavDropdown.Item>
             </NavDropdown>
@@ -50,21 +62,28 @@ const LmsHeader = () => {
               <NavDropdown.Item onClick={() => navigate("/events")}>Upcoming Events</NavDropdown.Item>
             </NavDropdown>
 
-            {/* Profile Dropdown */}
-            <NavDropdown title="Profile" id="profile-dropdown">
-              <NavDropdown.Item onClick={() => navigate("/profile")}>View Profile</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/profile/settings")}>Settings</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item onClick={() => navigate("/logout")}>Logout</NavDropdown.Item>
-            </NavDropdown>
-
+            {/* Profile Dropdown - Only Show When Logged In */}
+            {isLoggedIn && (
+              <NavDropdown title="Profile" id="profile-dropdown">
+                <NavDropdown.Item onClick={() => navigate("/lms/dashboard")}>View Profile</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate("/profile/settings")}>Settings</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+              </NavDropdown>
+            )}
           </Nav>
 
-          {/* LMS Login Button */}
-          <Button onClick={() => navigate("/lms")} variant="primary" className="lms-button">
-            Login
-          </Button>
-
+          {/* Show Login/Signup only if user is NOT logged in */}
+          {!isLoggedIn && (
+            <>
+              <Button onClick={() => navigate("/lms/login")} variant="primary" className="lms-button">
+                Login
+              </Button>
+              <Button onClick={() => navigate("/lms/signup")} variant="warning" className="lms-button">
+                Signup
+              </Button>
+            </>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

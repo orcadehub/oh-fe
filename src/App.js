@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
 import CustomCursor from "./components/CustomCursor";
-
+import { ToastContainer } from "react-toastify";
 import Internships from "./pages/Internships";
 import AddInternship from "./components/AddInternship";
 import Certi from "./pages/Certi";
@@ -15,6 +15,8 @@ import Certificate from "./pages/Certificate";
 import Payment from "./pages/Payment";
 import LmsHeader from "./components/LMS/LmsHeader";
 import LmsHome from "./pages/LMS/LmsHome";
+import LmsAuth from "./components/LMS/LmsAuth";
+import LmsDashBoard from "./pages/LMS/LmsDashBoard";
 
 function Layout() {
   const location = useLocation();
@@ -41,9 +43,23 @@ function Layout() {
 
         {/* LMS Routes */}
         <Route path="/lms" element={<LmsHome />} />
+        <Route path="/lms/login" element={<LmsAuth />} />
+        <Route path="/lms/signup" element={<LmsAuth />} />
+        <Route path="/lms/dashboard" element={<LmsDashBoard />} />
+        <Route path="/lms/courses" element={<Courses />} />
+        <Route path="/lms/courses/:courseId" element={<CourseDetails />} />
       </Routes>
       
       {!isLmsRoute && <Footer />} {/* Hide Footer in LMS */}
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+      />
     </>
   );
 }
