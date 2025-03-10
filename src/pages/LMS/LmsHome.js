@@ -324,158 +324,156 @@ const LmsHome = () => {
 
       {/* Mentors Section */}
       {/* 🌟 Meet Our Mentors */}
-<section className="mentors-section py-5">
-  <Container>
-    <motion.h2
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }} // Ensures animation triggers only once
-      className="text-center mb-4"
-    >
-      🌟 Meet Our Mentors
-    </motion.h2>
-
-    <Row className="mt-4">
-      {mentors.map((mentor, index) => (
-        <Col md={4} sm={6} lg={3} key={index} className="mb-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+      <section className="mentors-section py-5">
+        <Container>
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }} // Ensures animation triggers only once
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="text-center mb-4"
           >
-            <Card className="shadow text-center">
-              <motion.img
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.3 }}
-                viewport={{ once: true }}
-                src={mentor.image}
-                alt={mentor.name}
-                className="p-3 rounded-circle mx-auto d-block"
-                style={{ width: "100px", height: "100px" }}
-              />
-              
-              <Card.Body>
-                <motion.h5
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  {mentor.name}
-                </motion.h5>
+            🌟 Meet Our Mentors
+          </motion.h2>
 
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.5 }}
-                  viewport={{ once: true }}
-                  className="text-muted"
-                >
-                  {mentor.role}
-                </motion.p>
-
-                <motion.p
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.6 }}
-                  viewport={{ once: true }}
-                  className="text-muted"
-                >
-                  {mentor.company}
-                </motion.p>
-              </Card.Body>
-            </Card>
-          </motion.div>
-        </Col>
-      ))}
-    </Row>
-  </Container>
-</section>
-
-
-{/* Popular Courses */}
-<section className="courses-section py-5">
-  <Container>
-    <motion.h2
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }} // Ensures animation triggers only once
-      className="text-center mb-4"
-    >
-      🔥 Popular Courses 🔥
-    </motion.h2>
-
-    <Row>
-      {popularCourses.map((course, index) => (
-        <Col md={6} lg={4} key={course.id} className="mb-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Card className="course-card shadow">
-              <Card.Body>
-                <motion.h5
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.3 }}
-                  viewport={{ once: true }}
-                  className="course-title"
-                >
-                  {course.title}
-                </motion.h5>
-
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.4 }}
-                  viewport={{ once: true }}
-                  className="text-muted"
-                >
-                  By {course.instructor}
-                </motion.p>
-
-                <motion.p
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.5 }}
-                  viewport={{ once: true }}
-                  className="course-rating"
-                >
-                  ⭐ {course.rating}
-                </motion.p>
-
+          <Row className="mt-4">
+            {mentors.map((mentor, index) => (
+              <Col md={4} sm={6} lg={3} key={index} className="mb-4">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.6 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  viewport={{ once: true }} // Ensures animation triggers only once
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Button
-                    variant="success"
-                    onClick={() => navigate(`/lms/courses/${course.id}`)}
-                  >
-                    Enroll Now
-                  </Button>
-                </motion.div>
-              </Card.Body>
-            </Card>
-          </motion.div>
-        </Col>
-      ))}
-    </Row>
-  </Container>
-</section>
+                  <Card className="shadow text-center">
+                    <motion.img
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.3 }}
+                      viewport={{ once: true }}
+                      src={mentor.image}
+                      alt={mentor.name}
+                      className="p-3 rounded-circle mx-auto d-block"
+                      style={{ width: "100px", height: "100px" }}
+                    />
 
+                    <Card.Body>
+                      <motion.h5
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.4 }}
+                        viewport={{ once: true }}
+                      >
+                        {mentor.name}
+                      </motion.h5>
+
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.5 }}
+                        viewport={{ once: true }}
+                        className="text-muted"
+                      >
+                        {mentor.role}
+                      </motion.p>
+
+                      <motion.p
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-muted"
+                      >
+                        {mentor.company}
+                      </motion.p>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Popular Courses */}
+      <section className="courses-section py-5">
+        <Container>
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }} // Ensures animation triggers only once
+            className="text-center mb-4"
+          >
+            🔥 Popular Courses 🔥
+          </motion.h2>
+
+          <Row>
+            {popularCourses.map((course, index) => (
+              <Col md={6} lg={4} key={course.id} className="mb-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Card className="course-card shadow">
+                    <Card.Body>
+                      <motion.h5
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.3 }}
+                        viewport={{ once: true }}
+                        className="course-title"
+                      >
+                        {course.title}
+                      </motion.h5>
+
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.4 }}
+                        viewport={{ once: true }}
+                        className="text-muted"
+                      >
+                        By {course.instructor}
+                      </motion.p>
+
+                      <motion.p
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.5 }}
+                        viewport={{ once: true }}
+                        className="course-rating"
+                      >
+                        ⭐ {course.rating}
+                      </motion.p>
+
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        <Button
+                          variant="success"
+                          onClick={() => navigate(`/lms/courses/${course.id}`)}
+                        >
+                          Enroll Now
+                        </Button>
+                      </motion.div>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
       {/* Why Choose Us */}
       <section className="why-us-section text-center py-5">
@@ -600,14 +598,15 @@ const LmsHome = () => {
         </Container>
       </section>
 
-      {/* Upcoming Workshops */}
+      {/* 📅 Upcoming Workshops */}
       <section className="workshops-section text-center py-5">
         <Container>
           {/* Section Title */}
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true }}
             className="mb-4"
           >
             📅 Upcoming Workshops
@@ -616,8 +615,9 @@ const LmsHome = () => {
           {/* Additional Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            viewport={{ once: true }}
             className="mt-5"
           >
             <h4>🔖 Licensed Certification Provided</h4>
@@ -634,29 +634,60 @@ const LmsHome = () => {
           </motion.div>
 
           {/* Workshops Grid */}
-          <Row>
+          <Row className="mt-4">
             {workshops.map((workshop, index) => (
               <Col md={6} lg={4} key={index} className="mb-4">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Card className="shadow p-4 text-center">
-                    <FaCalendarAlt size={40} className="mb-3 text-primary" />
-                    <h5>{workshop.title}</h5>
-                    <p>
-                      <strong>📆 Start Date:</strong> {workshop.date}
-                    </p>
-                    <Button
-                      variant="success"
-                      href={workshop.link}
-                      target="_blank"
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.3 }}
+                      viewport={{ once: true }}
                     >
-                      <FaWhatsapp /> Join Now
-                    </Button>
+                      <FaCalendarAlt size={40} className="mb-3 text-primary" />
+                    </motion.div>
+
+                    <motion.h5
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.4 }}
+                      viewport={{ once: true }}
+                    >
+                      {workshop.title}
+                    </motion.h5>
+
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.5 }}
+                      viewport={{ once: true }}
+                      className="text-muted"
+                    >
+                      <strong>📆 Start Date:</strong> {workshop.date}
+                    </motion.p>
+
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      <Button
+                        variant="success"
+                        href={workshop.link}
+                        target="_blank"
+                      >
+                        <FaWhatsapp /> Join Now
+                      </Button>
+                    </motion.div>
                   </Card>
                 </motion.div>
               </Col>
@@ -673,19 +704,49 @@ const LmsHome = () => {
         </Container>
       </section>
 
-      {/* Community Section */}
-      <section className="community-section text-center">
-        <Container>
-          <h2>💬 Join Our Community</h2>
-          <p>Engage with learners and mentors on our discussion forums.</p>
-          <Button
-            variant="info"
-            href="https://chat.whatsapp.com/HuOhI7DyPecKN22scxTtT4"
-          >
-            Join Now
-          </Button>
-        </Container>
-      </section>
+     {/* 💬 Community Section */}
+<section className="community-section text-center py-5">
+  <Container>
+    {/* Section Title */}
+    <motion.h2
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="mb-3"
+    >
+      💬 Join Our Community
+    </motion.h2>
+
+    {/* Description */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-muted"
+    >
+      Engage with learners and mentors on our discussion forums.
+    </motion.p>
+
+    {/* Join Now Button */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.8, duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      <Button
+        variant="info"
+        href="https://chat.whatsapp.com/HuOhI7DyPecKN22scxTtT4"
+        target="_blank"
+        className="px-4 py-2 mt-3"
+      >
+        Join Now
+      </Button>
+    </motion.div>
+  </Container>
+</section>
 
       {/* Footer */}
       <footer className="text-center py-3">
