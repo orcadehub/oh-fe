@@ -4,6 +4,13 @@
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
   }
+  .course-card {
+    padding: 0 !important; /* Remove any padding */
+    margin: 0; /* Ensure no extra margin */
+    border-radius: 10px; /* Optional: Adjust styling */
+    overflow: hidden; /* Ensures image aligns properly */
+  }
+  
   
   .course-card:hover {
     transform: translateY(-5px);
@@ -12,6 +19,20 @@
   
   .course-img {
     height: 200px;
+    width: 100%;
     object-fit: cover;
+  }
+  
+  .floating-animation {
+    animation: floatUpDown 3s infinite ease-in-out alternate;
+  }
+  
+  @keyframes floatUpDown {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
   }
   

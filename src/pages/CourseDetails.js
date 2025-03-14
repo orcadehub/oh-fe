@@ -3,15 +3,41 @@ import { Container, Row, Col, Card, Button, Modal,Form } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./CourseDetails.css";
-import axios from "axios";
-import config from "../config";
+// import axios from "axios";
+// import config from "../config";
 import courseData from './courseData';
 
 const CourseDetails = () => {
-  const baseURL =
-    process.env.NODE_ENV === "development"
-      ? config.LOCAL_BASE_URL
-      : config.BASE_URL;
+
+  const getBatchStartDate = () => {
+    const today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth(); // 0-based index (Jan = 0, Dec = 11)
+    let day = today.getDate();
+  
+    // If today is past the 20th, move to the next month
+    if (day > 20) {
+      month += 1;
+      if (month > 11) {
+        // If December, move to January of the next year
+        month = 0;
+        year += 1;
+      }
+    }
+  
+    const monthName = new Date(year, month).toLocaleString("default", {
+      month: "long",
+    });
+  
+    return `20th ${monthName}, ${year}`;
+  };
+
+  
+
+  // const baseURL =
+  //   process.env.NODE_ENV === "development"
+  //     ? config.LOCAL_BASE_URL
+  //     : config.BASE_URL;
 
       const [installmentType, setInstallmentType] = useState("full");
 
@@ -22,100 +48,100 @@ const CourseDetails = () => {
         window.open(`https://wa.me/917093012101?text=${message}`, "_blank");
       };
 
-  const [responseId, setResponseId] = useState("");
-  const [responseState, setResponseState] = useState([]);
+  // const [responseId, setResponseId] = useState("");
+  // const [responseState, setResponseState] = useState([]);
 
-  const loadScript = (src) => {
-    return new Promise((resolve) => {
-      const script = document.createElement("script");
+  // const loadScript = (src) => {
+  //   return new Promise((resolve) => {
+  //     const script = document.createElement("script");
 
-      script.src = src;
+  //     script.src = src;
 
-      script.onload = () => {
-        resolve(true);
-      };
-      script.onerror = () => {
-        resolve(false);
-      };
+  //     script.onload = () => {
+  //       resolve(true);
+  //     };
+  //     script.onerror = () => {
+  //       resolve(false);
+  //     };
 
-      document.body.appendChild(script);
-    });
-  };
+  //     document.body.appendChild(script);
+  //   });
+  // };
 
-  const createRazorpayOrder = (amount) => {
-    let data = JSON.stringify({
-      amount: amount * 100,
-      currency: "INR",
-    });
+  // const createRazorpayOrder = (amount) => {
+  //   let data = JSON.stringify({
+  //     amount: amount * 100,
+  //     currency: "INR",
+  //   });
 
-    let config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: `${baseURL}/orders`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+  //   let config = {
+  //     method: "post",
+  //     maxBodyLength: Infinity,
+  //     url: `${baseURL}/orders`,
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     data: data,
+  //   };
 
-    axios
-      .request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-        handleRazorpayScreen(response.data.amount);
-      })
-      .catch((error) => {
-        console.log("error at", error);
-      });
-  };
+  //   axios
+  //     .request(config)
+  //     .then((response) => {
+  //       console.log(JSON.stringify(response.data));
+  //       handleRazorpayScreen(response.data.amount);
+  //     })
+  //     .catch((error) => {
+  //       console.log("error at", error);
+  //     });
+  // };
 
-  const handleRazorpayScreen = async (amount) => {
-    const res = await loadScript("https:/checkout.razorpay.com/v1/checkout.js");
+  // const handleRazorpayScreen = async (amount) => {
+  //   const res = await loadScript("https:/checkout.razorpay.com/v1/checkout.js");
 
-    if (!res) {
-      alert("Some error at razorpay screen loading");
-      return;
-    }
+  //   if (!res) {
+  //     alert("Some error at razorpay screen loading");
+  //     return;
+  //   }
 
-    const options = {
-      key: "rzp_test_KZWfJv1KGDv6La",
-      amount: amount,
-      currency: "INR",
-      name: "OrcadeHub",
-      description: "payment to OrcadeHub",
-      image:
-        "https://www.orcadehub.com/static/media/log.a4a397196354c6736694.png",
-      handler: function (response) {
-        setResponseId(response.razorpay_payment_id);
-      },
-      prefill: {
-        name: "papaya coders",
-        email: "papayacoders@gmail.com",
-      },
-      theme: {
-        color: "#6a0dad",
-      },
-    };
+  //   const options = {
+  //     key: "rzp_test_KZWfJv1KGDv6La",
+  //     amount: amount,
+  //     currency: "INR",
+  //     name: "OrcadeHub",
+  //     description: "payment to OrcadeHub",
+  //     image:
+  //       "https://www.orcadehub.com/static/media/log.a4a397196354c6736694.png",
+  //     handler: function (response) {
+  //       setResponseId(response.razorpay_payment_id);
+  //     },
+  //     prefill: {
+  //       name: "papaya coders",
+  //       email: "papayacoders@gmail.com",
+  //     },
+  //     theme: {
+  //       color: "#6a0dad",
+  //     },
+  //   };
 
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-  };
+  //   const paymentObject = new window.Razorpay(options);
+  //   paymentObject.open();
+  // };
 
-  const paymentFetch = (e) => {
-    e.preventDefault();
+  // const paymentFetch = (e) => {
+  //   e.preventDefault();
 
-    const paymentId = e.target.paymentId.value;
+  //   const paymentId = e.target.paymentId.value;
 
-    axios
-      .get(`${baseURL}/payment/${paymentId}`)
-      .then((response) => {
-        console.log(response.data);
-        setResponseState(response.data);
-      })
-      .catch((error) => {
-        console.log("error occures", error);
-      });
-  };
+  //   axios
+  //     .get(`${baseURL}/payment/${paymentId}`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setResponseState(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("error occures", error);
+  //     });
+  // };
 
   const { courseId } = useParams();
   const course = courseData[courseId];
@@ -143,17 +169,17 @@ const CourseDetails = () => {
     };
   }, []);
 
-  const handleUPIPayment = () => {
-    if (!course) return;
+  // const handleUPIPayment = () => {
+  //   if (!course) return;
 
-    const upiURL = `upi://pay?pa=${
-      course.upiId
-    }&pn=OrcadeHub&mc=&tid=&tr=&tn=Course%20Enrollment%20${
-      course.title
-    }&am=${course.price.replace("₹", "")}&cu=INR`;
+  //   const upiURL = `upi://pay?pa=${
+  //     course.upiId
+  //   }&pn=OrcadeHub&mc=&tid=&tr=&tn=Course%20Enrollment%20${
+  //     course.title
+  //   }&am=${course.price.replace("₹", "")}&cu=INR`;
 
-    window.location.href = upiURL; // Redirect to UPI Payment
-  };
+  //   window.location.href = upiURL; // Redirect to UPI Payment
+  // };
 
   if (!course) {
     return (
@@ -186,7 +212,7 @@ const CourseDetails = () => {
         <strong>💰 Price:</strong> {course.price}
       </p>
       <p>
-        <strong>🚀 Next Batch Starts:</strong> {course.batchStart}
+        <strong>🚀 Next Batch Starts:</strong> {getBatchStartDate()}
       </p>
 
       {/* Skills Covered */}
@@ -243,7 +269,7 @@ const CourseDetails = () => {
           <strong>💰 Price:</strong> {course.price}
         </p>
         <p>
-          <strong>🚀 Next Batch Starts:</strong> {course.batchStart}
+          <strong>🚀 Next Batch Starts:</strong> {getBatchStartDate()}
         </p>
         <p>
           🔹 Secure your seat now and begin your learning journey with

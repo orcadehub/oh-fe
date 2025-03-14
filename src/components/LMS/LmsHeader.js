@@ -34,11 +34,11 @@ const LmsHeader = () => {
         {/* Navigation Links */}
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
+
             {/* Courses Dropdown */}
             <NavDropdown title="Courses" id="courses-dropdown">
               <NavDropdown.Item onClick={() => navigate("/lms/courses")}>All Courses</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/courses/enrolled")}>My Enrolled Courses</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/courses/upcoming")}>Upcoming Courses</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/lms/workshops")}>Workshops</NavDropdown.Item>
             </NavDropdown>
 
             {/* Internships Dropdown */}

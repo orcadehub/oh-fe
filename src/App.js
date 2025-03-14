@@ -17,6 +17,7 @@ import LmsHeader from "./components/LMS/LmsHeader";
 import LmsHome from "./pages/LMS/LmsHome";
 import LmsAuth from "./components/LMS/LmsAuth";
 import LmsDashBoard from "./pages/LMS/LmsDashBoard";
+import Workshop from "./pages/LMS/Workshop";
 
 function Layout() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function Layout() {
         <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/internships" element={<Internships />} />
+        <Route path="/workshops" element={<Workshop />} />
         <Route path="/add-internship" element={<AddInternship />} />
         <Route path="/verify/certificate" element={<Certi />} />
         <Route path="/download/certificate" element={<Certi />} />
@@ -46,6 +48,7 @@ function Layout() {
         <Route path="/lms/login" element={<LmsAuth />} />
         <Route path="/lms/signup" element={<LmsAuth />} />
         <Route path="/lms/dashboard" element={<LmsDashBoard />} />
+        <Route path="/lms/workshops" element={<Workshop />} />
         <Route path="/lms/courses" element={<Courses />} />
         <Route path="/lms/courses/:courseId" element={<CourseDetails />} />
       </Routes>
