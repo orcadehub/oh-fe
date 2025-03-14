@@ -18,6 +18,8 @@ import LmsHome from "./pages/LMS/LmsHome";
 import LmsAuth from "./components/LMS/LmsAuth";
 import LmsDashBoard from "./pages/LMS/LmsDashBoard";
 import Workshop from "./pages/LMS/Workshop";
+import Feed from "./pages/LMS/Feed";
+import RequestCerti from "./pages/LMS/RequestCerti";
 
 function Layout() {
   const location = useLocation();
@@ -39,6 +41,8 @@ function Layout() {
         <Route path="/download/certificate" element={<Certi />} />
         <Route path="/certificate/:certiid" element={<Certi />} />
         <Route path="/certificates" element={<Certificate />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/certificates/request" element={<RequestCerti />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} /> 
         <Route path="/error" element={<NotFound />} /> 
@@ -46,6 +50,7 @@ function Layout() {
         {/* LMS Routes */}
         <Route path="/lms" element={<LmsHome />} />
         <Route path="/lms/login" element={<LmsAuth />} />
+        <Route path="/lms/feed" element={<Feed />} />
         <Route path="/lms/signup" element={<LmsAuth />} />
         <Route path="/lms/dashboard" element={<LmsDashBoard />} />
         <Route path="/lms/workshops" element={<Workshop />} />

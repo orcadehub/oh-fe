@@ -35,7 +35,7 @@ const Internships = () => {
 
   return (
     <Container className="mt-5">
-      <h2 className="text-center mb-4">🔥 Available Internships</h2>
+      {/* <h2 className="text-center mb-4">🔥 Available Internships</h2> */}
 
       {loading && (
         <div className="text-center">
@@ -47,8 +47,11 @@ const Internships = () => {
       {error && <Alert variant="danger">{error}</Alert>}
 
       <Row className="justify-content-center">
-        {!loading && !error && internships.length === 0 && (
+        {!loading && !error && internships.length === 0 && (  
+          <div>
+          <p className="text-center">We are working on it.</p>
           <p className="text-center">No internships available right now.</p>
+          </div>
         )}
 
         {internships.map((internship) => (

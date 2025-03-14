@@ -44,29 +44,29 @@ const LmsHeader = () => {
             {/* Internships Dropdown */}
             <NavDropdown title="Internships" id="internships-dropdown">
               <NavDropdown.Item onClick={() => navigate("/internships")}>Available Internships</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/internships/applied")}>My Applications</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/internships/recommended")}>Recommended for You</NavDropdown.Item>
+              {/* <NavDropdown.Item onClick={() => navigate("/internships/applied")}>My Applications</NavDropdown.Item> */}
+              {/* <NavDropdown.Item onClick={() => navigate("/internships/recommended")}>Recommended for You</NavDropdown.Item> */}
             </NavDropdown>
 
             {/* Certificates Dropdown */}
             <NavDropdown title="Certificates" id="certificates-dropdown">
               <NavDropdown.Item onClick={() => navigate("/certificates")}>Verify Certificate</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/certificates/download")}>Download Certificate</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/certificates")}>Download Certificate</NavDropdown.Item>
               <NavDropdown.Item onClick={() => navigate("/certificates/request")}>Request Certificate</NavDropdown.Item>
             </NavDropdown>
 
             {/* Feed/Community Dropdown */}
             <NavDropdown title="Community" id="community-dropdown">
-              <NavDropdown.Item onClick={() => navigate("/feed")}>Latest Feed</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/discussions")}>Discussion Forums</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/events")}>Upcoming Events</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/lms/feed")}>Latest Feed</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/lms/discussions")}>Discussion Forums</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/lms/events")}>Upcoming Events</NavDropdown.Item>
             </NavDropdown>
 
             {/* Profile Dropdown - Only Show When Logged In */}
             {isLoggedIn && (
               <NavDropdown title="Profile" id="profile-dropdown">
                 <NavDropdown.Item onClick={() => navigate("/lms/dashboard")}>View Profile</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => navigate("/profile/settings")}>Settings</NavDropdown.Item>
+                {/* <NavDropdown.Item onClick={() => navigate("/profile/settings")}>Settings</NavDropdown.Item> */}
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
               </NavDropdown>
