@@ -82,7 +82,7 @@ const Certificate = () => {
                   transition: { repeat: Infinity, duration: 2 },
                 }}
               >
-                <Button variant="primary" type="submit" className="w-100">
+                <Button variant="success" type="submit" className="w-100">
                   Submit
                 </Button>
               </motion.div>
@@ -129,6 +129,7 @@ const Certificate = () => {
           >
             <Button
               variant="success"
+              style={{backgroundColor:'#6a0dad'}}
               onClick={() => navigate("/certificates/request")}
             >
               📜 Get Your Certificate Now!

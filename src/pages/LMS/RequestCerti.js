@@ -108,7 +108,8 @@ function RequestCerti() {
             scale: [1, 1.05, 1],
             transition: { repeat: Infinity, duration: 2 },
           }}
-          className="btn btn-primary mb-3"
+          className="btn mb-3 text-light"
+          style={{backgroundColor:'#6a0dad'}}
           onClick={handleRequest}
         >
           📜 Request Certificate Now!
