@@ -6,14 +6,14 @@ import "./Home.css"; // Import CSS file
 import Testi from "../components/Testi";
 
 const Home = () => {
-  // Slider settings
-
-
-
-
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+      exit={{ opacity: 0, scale: 0.9, rotate: 2 }}
+      transition={{ duration: 1 }}
+    >
+  
       {/* Hero Section */}
       <section className="hero-section">
         <Container className="text-center">

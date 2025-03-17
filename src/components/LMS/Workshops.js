@@ -1,16 +1,7 @@
 import React from "react";
 import {
-  //   FaBook,
-  //   FaLaptopCode,
-  //   FaCertificate,
-  //   FaUsers,
   FaCalendarAlt,
   FaWhatsapp,
-  //   FaGraduationCap,
-  //   FaBriefcase,
-  //   FaChalkboardTeacher,
-  //   FaCode,
-  //   FaMedal,
 } from "react-icons/fa";
 
 import { Button, Card, Container, Row, Col } from "react-bootstrap";

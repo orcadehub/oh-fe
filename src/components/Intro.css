@@ -1,0 +1,38 @@
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff; /* White background */
+    overflow: hidden;
+  }
+  
+  .intro-text {
+    font-size: 3rem; /* Slightly smaller for simplicity */
+    font-family: "Arial", sans-serif;
+    color: #000; /* Starts black, fades to white */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .intro-logo {
+    width: 180px; /* Slightly smaller */
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }

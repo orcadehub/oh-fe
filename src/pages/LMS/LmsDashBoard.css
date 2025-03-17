@@ -51,3 +51,66 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   
+  .profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-initials {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #555;
+    color: white;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .edit-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  

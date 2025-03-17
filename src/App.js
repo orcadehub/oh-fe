@@ -20,17 +20,20 @@ import LmsDashBoard from "./pages/LMS/LmsDashBoard";
 import Workshop from "./pages/LMS/Workshop";
 import Feed from "./pages/LMS/Feed";
 import RequestCerti from "./pages/LMS/RequestCerti";
+import Intro from "./components/Intro";
 
 function Layout() {
   const location = useLocation();
   const isLmsRoute = location.pathname.startsWith("/lms");
+  const isIntroPage = location.pathname === "/";
 
   return (
     <>
       <CustomCursor />
-      {isLmsRoute ? <LmsHeader /> : <Header />}
+      {!isIntroPage && (isLmsRoute ? <LmsHeader /> : <Header />)}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Intro />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route path="/contact" element={<Contact />} />
@@ -58,7 +61,7 @@ function Layout() {
         <Route path="/lms/courses/:courseId" element={<CourseDetails />} />
       </Routes>
       
-      {!isLmsRoute && <Footer />} {/* Hide Footer in LMS */}
+      {!isIntroPage && !isLmsRoute && <Footer />} {/* Hide Footer in Intro & LMS */}
       <ToastContainer
         position="top-center"
         autoClose={3000}
