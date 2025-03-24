@@ -105,7 +105,7 @@ const Intro = () => {
         update: (anim) => {
           if (textRef.current) {
             const progress = anim.progress / 100;
-            textRef.current.style.color = `hsl(0, 0%, ${progress * 100}%)`; // Black to white
+            textRef.current.style.color = `hsl(0, 0%, ${progress * 20}%)`; // Black to white
           }
         },
       }, "-=1200")

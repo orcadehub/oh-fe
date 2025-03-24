@@ -26,12 +26,12 @@ const LmsDashBoard = () => {
     profilePic: "",
   });
   const [profilePicFile, setProfilePicFile] = useState(null);
+  const baseURL =
+    process.env.NODE_ENV === "development"
+      ? config.LOCAL_BASE_URL
+      : config.BASE_URL;
 
   useEffect(() => {
-    const baseURL =
-      process.env.NODE_ENV === "development"
-        ? config.LOCAL_BASE_URL
-        : config.BASE_URL;
 
     const fetchUserDetails = async () => {
       const token = localStorage.getItem("token");
@@ -44,6 +44,7 @@ const LmsDashBoard = () => {
         });
 
         setUser(response.data);
+        console.log(response.data)
         setUpdatedUser(response.data);
         const enrolledCourses = response.data.enrolledCourses || [];
 
@@ -73,10 +74,10 @@ const LmsDashBoard = () => {
     if (!token) return;
 
     try {
-      const baseURL =
-        process.env.NODE_ENV === "development"
-          ? config.LOCAL_BASE_URL
-          : config.BASE_URL;
+      // const baseURL =
+      //   process.env.NODE_ENV === "development"
+      //     ? config.LOCAL_BASE_URL
+      //     : config.BASE_URL;
 
       const formData = new FormData();
       formData.append("fullName", updatedUser.fullName);
