@@ -97,7 +97,7 @@ const Certi = () => {
           </div>
 
 {/* Download */}
-          {/* <Row>
+          <Row>
             <Col className="d-flex justify-content-center mt-3">
               <Button
                 onClick={handlePrint}
@@ -127,7 +127,7 @@ const Certi = () => {
                 </>
               )}
             </Col>
-          </Row> */}
+          </Row>
         </>
       )}
     </Container>

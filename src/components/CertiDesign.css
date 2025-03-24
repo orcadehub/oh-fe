@@ -1,16 +1,7 @@
 .certificate-container {
   margin: 20px auto;
-  /* padding: 20px; */
+  padding: 20px;
   box-sizing: border-box;
-}
-
-@media print {
-  .certificate-container {
-    width: 11in !important;
-    height: 8.5in !important;
-    margin: 0 !important;
-    padding: 20px !important;
-  }
 }
 
 @media (max-width: 768px) {
