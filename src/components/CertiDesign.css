@@ -1,22 +1,28 @@
-
 .certificate-container {
-    margin: 20px auto;
-    padding: 20px;
-    box-sizing: border-box;
+  margin: 20px auto;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+@media print {
+  .certificate-container {
+    width: 11in !important;
+    height: 8.5in !important;
+    margin: 0 !important;
+    padding: 20px !important;
   }
-  .cd-box{
-    font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 768px) {
+  .certificate-container {
+    padding: 10px;
   }
-  @media (max-width: 768px) {
-    .certificate-container {
-      padding: 10px;
-    }
-    
-    .key-skills-section {
-      margin-bottom: 20px;
-    }
-    
-    .certificate-content {
-      text-align: center;
-    }
+  
+  .key-skills-section {
+    margin-bottom: 20px;
   }
+  
+  .certificate-content {
+    text-align: center;
+  }
+}

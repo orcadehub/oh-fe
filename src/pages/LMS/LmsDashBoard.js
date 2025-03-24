@@ -160,7 +160,7 @@ const LmsDashBoard = () => {
             transition={{ duration: 0.5 }}
           >
             <h2>Welcome, {user.fullName} 👋</h2>
-            <div className="profile-section">
+            {/* <div className="profile-section">
               {user.profilePic ? (
                 <img
                   src={`${user.profilePic}`}
@@ -172,7 +172,7 @@ const LmsDashBoard = () => {
                   {user.fullName.charAt(0).toUpperCase()}
                 </div>
               )}
-            </div>
+            </div> */}
 
             {!isEditing ? (
               <>
@@ -212,12 +212,12 @@ const LmsDashBoard = () => {
                     setUpdatedUser({ ...updatedUser, phone: e.target.value })
                   }
                 />
-                <label>Profile Picture:</label>
+                {/* <label>Profile Picture:</label>
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleFileChange}
-                />
+                /> */}
                 <button className="save-btn" onClick={handleEditProfile}>
                   Save
                 </button>
