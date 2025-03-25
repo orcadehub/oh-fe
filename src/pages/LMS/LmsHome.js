@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import Azzu from "../../assets/azzu.jpg";
+import Basha from "../../assets/basha.jpeg";
 import Shivam from "../../assets/shivam.jpg";
 import {
   FaBook,
@@ -185,6 +186,14 @@ const LmsHome = () => {
       role: "CEO & Lead Developer",
       company: "ORCADEHUB",
       image: Azzu,
+      description:
+        "Expert in MERN Stack development with 3+ years of experience.Trained more than 10000+ students.",
+    },
+    {
+      name: "K. Srinivasa Reddy",
+      role: "Founder & Lead Developer",
+      company: "ORCADEHUB",
+      image: Basha,
       description:
         "Expert in MERN Stack development with 3+ years of experience.Trained more than 10000+ students.",
     },
