@@ -9,22 +9,22 @@ import { motion } from "framer-motion";
 function Workshops() {
   const workshops = [
     {
-      title: "3-Day HTML & CSS",
-      date: "March 25 - March 27, 2025",
+      title: "3-Day Java Script",
+      date: "April 25 - April 27, 2025",
       mentor: "Ajith Kumar",
-      link: "https://chat.whatsapp.com/GFECqHgkMkyGIzAW9ABCMp",
+      link: "https://chat.whatsapp.com/B7zpS6LGcZP4i3fKYO2ius",
     },
     {
-      title: "3-Day DSA using CPP",
-      date: "April 10 - April 12, 2025",
-      mentor: "Shivam",
-      link: "https://chat.whatsapp.com/GFECqHgkMkyGIzAW9ABCMp",
+      title: "3-Day Data Structures",
+      date: "April 7 - April 9, 2025",
+      mentor: "Srinivas",
+      link: "https://chat.whatsapp.com/LugYCqr5P5wCJ4UFwZAm08",
     },
     {
       title: "1-Day Mobile App Dev",
-      date: "April 1, 2025",
+      date: "April 21, 2025",
       mentor: "Srinivas",
-      link: "https://chat.whatsapp.com/GFECqHgkMkyGIzAW9ABCMp",
+      link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
     },
   ];
   return (
