@@ -1,83 +1,108 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, Spinner, Alert } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Card, Button, Form, Modal } from "react-bootstrap";
 import { motion } from "framer-motion";
-import axios from "axios";
 import "./Internships.css";
-import config from "../config";
+import Logo from "../assets/log.png";
+
 const Internships = () => {
-  const [internships, setInternships] = useState([]); // Store internships
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); // Error state
+  const internships = [
+    {
+      _id: "1",
+      title: "Full Stack Development Internship",
+      role: "Full Stack Developer",
+      company: "OrcadeHub",
+      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+    {
+      _id: "3",
+      title: "UI/UX Design Internship",
+      role: "UI/UX Designer",
+      company: "OrcadeHub",
+      skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "User Research"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+    {
+      _id: "4",
+      title: "Frontend Development Internship",
+      role: "Frontend Developer",
+      company: "OrcadeHub",
+      skills: ["HTML", "CSS", "JavaScript","Bootstrap", "React", "Redux"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+    {
+      _id: "5",
+      title: "Backend Development Internship",
+      role: "Backend Developer",
+      company: "OrcadeHub",
+      skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Authentication"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+    {
+      _id: "6",
+      title: "Database Management Internship",
+      role: "Database Management (MongoDB)",
+      company: "OrcadeHub",
+      skills: ["MongoDB", "Mongoose", "NoSQL", "Database Optimization"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+    {
+      _id: "7",
+      title: "MERN Stack Development Internship",
+      role: "MERN Stack Developer",
+      company: "OrcadeHub",
+      skills: ["MongoDB", "Express.js", "React", "Node.js", "Full Stack Development"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+    {
+      _id: "8",
+      title: "React Native Development Internship",
+      role: "React Native Developer",
+      company: "OrcadeHub",
+      skills: ["React Native", "Expo", "Android/iOS Development", "Redux"],
+      price: "₹49 for Offer Letter, Certificate, LOR & Maintenance",
+    },
+  ];
 
-  const baseURL =
-  process.env.NODE_ENV === "development"
-    ? config.LOCAL_BASE_URL
-    : config.BASE_URL;
+  const [selectedInternship, setSelectedInternship] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedDuration, setSelectedDuration] = useState("");
 
-  // ✅ Fetch Internships from API
-  useEffect(() => {
-    const fetchInternships = async () => {
-      try {
-        const response = await axios.get(`${baseURL}/internship`, {
-          headers: { "Content-Type": "application/json" }, // ✅ Ensure proper headers
-          withCredentials: true, // ✅ Allow sending cookies/tokens
-        });
-        setInternships(response.data);
-      } catch (error) {
-        console.error("🚨 Error fetching internships:", error.response?.data || error.message);
-        setError("Failed to load internships. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchInternships();
-  }, []);
+  const handleDurationChange = (internship, duration) => {
+    setSelectedInternship(internship);
+    setSelectedDuration(duration);
+    setShowModal(true);
+  };
 
   return (
     <Container className="mt-5">
-      {/* <h2 className="text-center mb-4">🔥 Available Internships</h2> */}
-
-      {loading && (
-        <div className="text-center">
-          <Spinner animation="border" variant="primary" />
-          <p>Loading internships...</p>
-        </div>
-      )}
-
-      {error && <Alert variant="danger">{error}</Alert>}
+      <h2 className="text-center mb-4">🔥 Available Virtual Internships</h2>
 
       <Row className="justify-content-center">
-        {!loading && !error && internships.length === 0 && (  
-          <div>
-          <p className="text-center">We are working on it.</p>
-          <p className="text-center">No internships available right now.</p>
-          </div>
-        )}
-
         {internships.map((internship) => (
-          <Col md={12} key={internship._id} className="mb-4">
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+          <Col lg={4} md={6} sm={12} key={internship._id} className="mb-4">
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Card className="internship-card shadow p-3">
-                <Card.Body className="d-flex flex-wrap align-items-center justify-content-between">
-                  {/* Company Logo */}
-                  <div className="company-logo text-center">
-                    <img src={internship.logo} alt={internship.company} width="100" height="100" />
+                <Card.Body className="d-flex flex-column align-items-center text-center">
+                <div className="company-logo">
+                    <img src={Logo} alt={internship.company} width="80" height="80" />
                   </div>
-
-                  {/* Internship Details */}
-                  <div className="internship-details flex-grow-1 px-4">
+                  <div className="internship-details mt-3">
                     <Card.Title className="fw-bold">{internship.role}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{internship.company}</Card.Subtitle>
-                    <p>📍 {internship.location}</p>
-                    <p>📆 {internship.duration || "N/A"}</p>
-                    <p>💰 {internship.stipend || "Not Disclosed"}</p>
-                  </div>
-
-                  {/* Apply Button */}
-                  <div className="apply-button">
-                    <Button href={internship.applyLink} target="_blank" variant="primary" className="fw-bold px-4">
-                      Apply Now
-                    </Button>
+                    <p className="fw-bold text-danger">{internship.price}</p>
+                    <p className="skills"><strong>Skills:</strong> {internship.skills.join(", ")}</p>
+                    <Form.Select
+                      onChange={(e) => handleDurationChange(internship, e.target.value)}
+                      className="mb-2"
+                    >
+                      <option value="">Select Duration</option>
+                      <option value="1 Month">1 Month</option>
+                      <option value="2 Months">2 Months</option>
+                      <option value="3 Months">3 Months</option>
+                      <option value="4 Months">4 Months</option>
+                      <option value="6 Months">6 Months</option>
+                    </Form.Select>
                   </div>
                 </Card.Body>
               </Card>
@@ -85,6 +110,26 @@ const Internships = () => {
           </Col>
         ))}
       </Row>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Payment Instructions</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            To enroll in the <strong>{selectedInternship?.title}</strong> for {selectedDuration}, please send
+            <strong> ₹49 </strong> to <strong>+91 7093012101</strong> via any UPI.
+          </p>
+          <p>
+            After payment, send the screenshot via WhatsApp to proceed with the next step.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

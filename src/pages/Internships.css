@@ -1,23 +1,35 @@
 .internship-card {
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
 }
 
 .internship-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 5px 15px rgba(106, 13, 173, 0.5);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .company-logo img {
-  max-width: 100px;
-  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.internship-details p {
-  margin-bottom: 8px;
+.skills {
+  font-size: 14px;
+  color: #555;
 }
 
 .apply-button {
-  min-width: 150px;
-  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .internship-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .internship-card {
+    padding: 15px;
+    text-align: center;
+  }
 }
