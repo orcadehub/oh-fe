@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  FaCalendarAlt,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaCalendarAlt, FaWhatsapp } from "react-icons/fa";
 
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
@@ -15,14 +12,14 @@ function Workshops() {
       link: "https://chat.whatsapp.com/B7zpS6LGcZP4i3fKYO2ius",
     },
     {
-      title: "3-Day Data Structures",
-      date: "April 7 - April 9, 2025",
+      title: "1-Day Mobile App Dev Demo",
+      date: "April 21, 2025",
       mentor: "Srinivas",
-      link: "https://chat.whatsapp.com/LugYCqr5P5wCJ4UFwZAm08",
+      link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
     },
     {
-      title: "1-Day Mobile App Dev",
-      date: "April 21, 2025",
+      title: "1-Day MERN tack Demo",
+      date: "April 22, 2025",
       mentor: "Srinivas",
       link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
     },
