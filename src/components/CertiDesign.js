@@ -3,35 +3,36 @@ import { Container, Row, Col, Card, ListGroup, Badge } from "react-bootstrap";
 import Logo from "../assets/log.png";
 
 import Sign from "../assets/e-sign.png";
-import './CertiDesign.css';
+import "./CertiDesign.css";
 
 const CertiDesign = ({ certificateDetails }) => {
   // Define the title and body text for different types of certificates
   const certificateData = {
     1: {
       title: "Internship Certificate",
-      body: "This certificate is awarded in recognition of the successful completion of an internship program. The recipient has displayed excellent work ethic, contributed significantly to the projects, and acquired valuable skills in a professional environment."
+      body: "This certificate is awarded in recognition of the successful completion of an internship program. The recipient has displayed excellent work ethic, contributed significantly to the projects, and acquired valuable skills in a professional environment.",
     },
     2: {
       title: "Marketing Certificate",
-      body: "This certificate is awarded for the successful completion of a marketing course. The recipient has gained in-depth knowledge in marketing strategies, digital marketing tools, and demonstrated their ability to apply these concepts in real-world scenarios."
+      body: "This certificate is awarded for the successful completion of a marketing course. The recipient has gained in-depth knowledge in marketing strategies, digital marketing tools, and demonstrated their ability to apply these concepts in real-world scenarios.",
     },
     default: {
       title: "Course Certificate",
-      body: "This certificate is awarded in recognition of the successful completion of an intensive and comprehensive learning program. The recipient has demonstrated exceptional dedication, discipline, and intellectual rigor throughout their studies. Their commitment to excellence and perseverance in mastering the subject matter have equipped them with the necessary skills and knowledge to excel in their future endeavors."
-    }
+      body: "This certificate is awarded in recognition of the successful completion of an intensive and comprehensive learning program. The recipient has demonstrated exceptional dedication, discipline, and intellectual rigor throughout their studies. Their commitment to excellence and perseverance in mastering the subject matter have equipped them with the necessary skills and knowledge to excel in their future endeavors.",
+    },
   };
 
   // Determine the title and body text based on the type value (fallback to 'default' if no type)
-  const certificateTitle = certificateDetails.type
-    ? certificateData[certificateDetails.type]?.title || certificateData.default.title
-    : certificateData.default.title;
+  const certificateTitle =
+    certificateData[certificateDetails.type]?.title ||
+    certificateData.default.title;
 
-  const certificateBody = certificateDetails.type
-    ? certificateData[certificateDetails.type]?.body || certificateData.default.body
-    : certificateData.default.body;
-    console.log(certificateBody)
-    debugger
+  const certificateBody =
+    certificateData[certificateDetails.type]?.body ||
+    certificateData.default.body;
+
+  console.log(certificateBody);
+  debugger;
   return (
     <Container
       fluid
@@ -41,7 +42,11 @@ const CertiDesign = ({ certificateDetails }) => {
       <Row>
         {/* Key Skills Section */}
         <Col md={3} className="key-skills-section p-4 rounded-5">
-          <Badge pill className="mb-3" style={{ backgroundColor: '#6A0DAD', color: 'white' }}>
+          <Badge
+            pill
+            className="mb-3"
+            style={{ backgroundColor: "#6A0DAD", color: "white" }}
+          >
             SPECIALIZED TRAININGS
           </Badge>
           <h3>Key Skills</h3>
@@ -50,7 +55,7 @@ const CertiDesign = ({ certificateDetails }) => {
               <ListGroup.Item
                 key={index}
                 className="text-white rounded-5"
-                style={{ backgroundColor: '#6A0DAD' }}
+                style={{ backgroundColor: "#6A0DAD" }}
               >
                 {skill}
               </ListGroup.Item>
@@ -86,31 +91,35 @@ const CertiDesign = ({ certificateDetails }) => {
                 <h4 className="text-center">{certificateDetails.name}</h4>
                 <p className="text-center">
                   has successfully completed the {certificateDetails.duration}{" "}
-                  course and training in
+                  {certificateDetails.type === 1
+                    ? "internship program in"
+                    : "course and training in"}
                 </p>
+
                 <h3 className="text-center">{certificateDetails.course}</h3>
-                
+
                 {/* Conditional body based on certificate type */}
                 <p>{certificateBody}</p>
               </div>
               <div className="mt-4 text-right">
-               
                 <div className="d-flex justify-content-around flex-wrap">
-                <div>
-                <img
-                  src={Sign}
-                  alt="Signature"
-                  className="signature"
-                  height={50}
-                /> <br/>
-                  <p className="text-center">
-                    Gurram Ajith Kumar
+                  <div>
+                    <img
+                      src={Sign}
+                      alt="Signature"
+                      className="signature"
+                      height={50}
+                    />{" "}
                     <br />
-                    Founder & CEO
-                  </p>
-                </div>
+                    <p className="text-center">
+                      Gurram Ajith Kumar
+                      <br />
+                      Founder & CEO
+                    </p>
+                  </div>
                   <p className="text-center mt-5">
-                 Issued on: {certificateDetails.issuedDate.split('T')[0]}   <br />
+                    Issued on: {certificateDetails.issuedDate.split("T")[0]}{" "}
+                    <br />
                     Certificate no.: {certificateDetails.certificateId}
                   </p>
                 </div>
@@ -118,7 +127,11 @@ const CertiDesign = ({ certificateDetails }) => {
               <div className="mt-4">
                 <p>
                   For certificate authentication, please visit{" "}
-                  <a href="https://www.orcadehub.com/LMS/certificates" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.orcadehub.com/LMS/certificates"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Click here to verify
                   </a>
                 </p>
