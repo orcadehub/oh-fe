@@ -16,15 +16,15 @@ const Footer = () => {
           {/* Company Info & Address */}
           <Col md={4} className="footer-section">
             <h5>📍 Branch Locations</h5>
-            <p><FaMapMarkerAlt /> <strong>Main Branch:</strong> Tirupati</p>
-            <p><FaMapMarkerAlt /> <strong>Second Branch:</strong> Guntur</p>
+            <p><FaMapMarkerAlt /> <strong>Main Branch:</strong> Mudigubba, Anantapur</p>
+            {/* <p><FaMapMarkerAlt /> <strong>Second Branch:</strong> Guntur</p> */}
           </Col>
 
           {/* Contact Details */}
           <Col md={4} className="footer-section">
             <h5>📞 Contact</h5>
             <p><FaPhone /> <strong> Ajith Kumar ( Founder & CEO ):</strong> +91 7093012101</p>
-            <p><FaPhone /> <strong> Srinivas ( Co-Founder ):</strong> +91 96182 27559</p>
+            {/* <p><FaPhone /> <strong> Srinivas ( Co-Founder ):</strong> +91 96182 27559</p> */}
             {/* <p><FaPhone /> <strong> Chandrika ( Director ):</strong> +91 8688439185</p> */}
             <p><FaPhone /> <strong> Bhavana ( Technical Lead ):</strong> +91 6301396996</p>
             <p><FaEnvelope /> <strong>Email:</strong> <a href="mailto:ceo@orcadehub.in">ceo@orcadehub.in</a></p>
@@ -36,7 +36,7 @@ const Footer = () => {
             <ul className="footer-links">
               <li><a href="/courses">Courses</a></li>
               <li><a href="/certifications">Certifications</a></li>
-              <li><a href="/internships">Internships</a></li>
+              <li><a href="/printing">Printing</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="/lms">LMS Portal</a></li>
             </ul>

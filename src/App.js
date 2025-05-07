@@ -21,6 +21,7 @@ import Workshop from "./pages/LMS/Workshop";
 import Feed from "./pages/LMS/Feed";
 import RequestCerti from "./pages/LMS/RequestCerti";
 import Intro from "./components/Intro";
+import Print from "./pages/Print";
 
 function Layout() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function Layout() {
         <Route path="/internships" element={<Internships />} />
         <Route path="/workshops" element={<Workshop />} />
         <Route path="/add-internship" element={<AddInternship />} />
+        <Route path="/printing" element={<Print />} />
         <Route path="/verify/certificate" element={<Certi />} />
         <Route path="/download/certificate" element={<Certi />} />
         <Route path="/certificate/:certiid" element={<Certi />} />
