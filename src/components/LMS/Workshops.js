@@ -11,12 +11,12 @@ function Workshops() {
       mentor: "Ajith Kumar",
       link: "https://chat.whatsapp.com/B7zpS6LGcZP4i3fKYO2ius",
     },
-    // {
-    //   title: "1-Day Mobile App Dev Demo",
-    //   date: "April 21, 2025",
-    //   mentor: "Srinivas",
-    //   link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
-    // },
+    {
+      title: "1-Day Mobile App Dev Demo",
+      date: "May 21, 2025",
+      mentor: "Srinivas",
+      link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
+    },
     {
       title: "1-Day MERN tack Demo",
       date: "May 16, 2025",
