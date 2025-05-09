@@ -36,12 +36,12 @@ function Workshops() {
             viewport={{ once: true }}
             className="mb-4"
           >
-            📅 Upcoming Workshops
+            📅 Upcoming <span className="text-danger">FREE</span> Workshops
           </motion.h2>
 
           {/* Certification Info */}
           <div className="mt-5">
-            <h4>🔖 Licensed Certification Provided</h4>
+            <h4>🔖 Licensed <span className="text-danger">FREE</span> Certification Provided</h4>
             <p>
               Receive an officially licensed certificate upon successful
               completion.

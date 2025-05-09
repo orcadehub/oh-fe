@@ -30,17 +30,20 @@ const Footer = () => {
             <p><FaEnvelope /> <strong>Email:</strong> <a href="mailto:ceo@orcadehub.in">ceo@orcadehub.in</a></p>
           </Col>
 
-          {/* Quick Links */}
-          <Col md={4} className="footer-section">
-            <h5>🔗 Quick Links</h5>
-            <ul className="footer-links">
-              <li><a href="/courses">Courses</a></li>
-              <li><a href="/certifications">Certifications</a></li>
-              <li><a href="/printing">Printing</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/lms">LMS Portal</a></li>
-            </ul>
-          </Col>
+         {/* Quick Links */}
+<Col md={4} className="footer-section">
+  <h5>🔗 Quick Links</h5>
+  <ul className="footer-links">
+    <li><a href="/courses">Courses</a></li>
+    <li><a href="/certifications">Certifications</a></li>
+    {/* <li><a href="/printing">Printing</a></li> */}
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/lms">LMS Portal</a></li>
+    <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+    <li><a href="/privacy-policy">Privacy Policy</a></li>
+  </ul>
+</Col>
+
         </Row>
 
         {/* Social Media & Copyright */}

@@ -1,0 +1,77 @@
+.privacy-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+  }
+  
+  .privacy-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2d2d2d;
+    text-align: center;
+  }
+  
+  .privacy-container h4 {
+    font-size: 22px;
+    margin-top: 30px;
+    color: #0056b3;
+  }
+  
+  .privacy-container h5 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #444;
+  }
+  
+  .privacy-container p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .privacy-container ul {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .privacy-container li {
+    margin-bottom: 8px;
+  }
+  
+  .privacy-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .privacy-container a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 600px) {
+    .privacy-container {
+      padding: 15px;
+    }
+  
+    .privacy-container h2 {
+      font-size: 24px;
+    }
+  
+    .privacy-container h4 {
+      font-size: 20px;
+    }
+  
+    .privacy-container h5 {
+      font-size: 16px;
+    }
+  
+    .privacy-container p,
+    .privacy-container li {
+      font-size: 15px;
+    }
+  }
+  

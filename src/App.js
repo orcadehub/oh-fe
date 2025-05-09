@@ -22,6 +22,8 @@ import Feed from "./pages/LMS/Feed";
 import RequestCerti from "./pages/LMS/RequestCerti";
 import Intro from "./components/Intro";
 import Print from "./pages/Print";
+import TC from "./pages/TC";
+import PAP from "./pages/PAP";
 
 function Layout() {
   const location = useLocation();
@@ -49,6 +51,8 @@ function Layout() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/certificates/request" element={<RequestCerti />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/terms-and-conditions" element={<TC />} />
+        <Route path="/privacy-policy" element={<PAP />} />
         <Route path="*" element={<NotFound />} /> 
         <Route path="/error" element={<NotFound />} /> 
 
