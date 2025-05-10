@@ -35,7 +35,7 @@ const Footer = () => {
   <h5>🔗 Quick Links</h5>
   <ul className="footer-links">
     <li><a href="/courses">Courses</a></li>
-    <li><a href="/certifications">Certifications</a></li>
+    {/* <li><a href="/certifications">Certifications</a></li> */}
     {/* <li><a href="/printing">Printing</a></li> */}
     <li><a href="/contact">Contact</a></li>
     <li><a href="/lms">LMS Portal</a></li>
