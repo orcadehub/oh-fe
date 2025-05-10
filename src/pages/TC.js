@@ -15,7 +15,7 @@ const TC = () => {
         By accessing or using our Service, you agree to be bound by these Terms.
         If you do not agree with these Terms, you must not use our Service.
       </p>
-      <p><em>This Website is managed by OrcadeHub Innovations LLP</em></p>
+      <p><em>This Website is managed by Gurram Ajith Kumar</em></p>
       <p>
         For any inquiries, please contact us at:{" "}
         <a href="mailto:ceo@orcadehub.in">ceo@orcadehub.in</a>

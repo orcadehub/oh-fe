@@ -8,7 +8,7 @@ function Workshops() {
     {
       title: "3-Day Java Script",
       date: "May 13 - April 15, 2025",
-      mentor: "Ajith Kumar",
+      mentor: "Gurram Ajith Kumar",
       link: "https://chat.whatsapp.com/B7zpS6LGcZP4i3fKYO2ius",
     },
     {
@@ -20,7 +20,7 @@ function Workshops() {
     {
       title: "1-Day MERN tack Demo",
       date: "May 16, 2025",
-      mentor: "Ajith Kumar",
+      mentor: "Gurram Ajith Kumar",
       link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
     },
   ];
