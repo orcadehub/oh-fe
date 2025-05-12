@@ -21,15 +21,17 @@ const products = [
         name: "Classic Tee 1 side",
         price: "₹99",
         image: T1,
-        description: "Premium cotton T-shirt with vibrant print on the front side."
+        description:
+          "Premium cotton T-shirt with vibrant print on the front side.",
       },
       {
         name: "Classic Tee 2 side",
         price: "₹129",
         image: T2,
-        description: "Custom printed T-shirt with designs on both front and back."
-      }
-    ]
+        description:
+          "Custom printed T-shirt with designs on both front and back.",
+      },
+    ],
   },
   {
     category: "Cups",
@@ -38,27 +40,28 @@ const products = [
         name: "Ceramic Mug 1 Image",
         price: "₹99",
         image: Cup1,
-        description: "Sturdy ceramic mug with your photo printed on one side."
+        description: "Sturdy ceramic mug with your photo printed on one side.",
       },
       {
         name: "1 Image & Text",
         price: "₹119",
         image: Cup2,
-        description: "Personalized mug with your photo and custom text."
+        description: "Personalized mug with your photo and custom text.",
       },
       {
         name: "Ceramic Mug 2 Images",
         price: "₹129",
         image: Cup3,
-        description: "Beautiful ceramic mug with two photo placements."
+        description: "Beautiful ceramic mug with two photo placements.",
       },
       {
         name: "2 Images & Text",
         price: "₹139",
         image: Cup3,
-        description: "Fully personalized mug with two images and custom message."
-      }
-    ]
+        description:
+          "Fully personalized mug with two images and custom message.",
+      },
+    ],
   },
   {
     category: "Caps",
@@ -67,9 +70,9 @@ const products = [
         name: "White Cap",
         price: "₹99",
         image: Cap,
-        description: "Classic white cap with custom logo or text print."
-      }
-    ]
+        description: "Classic white cap with custom logo or text print.",
+      },
+    ],
   },
   {
     category: "Bottles",
@@ -78,27 +81,30 @@ const products = [
         name: "Aluminium Bottle 1 side",
         price: "₹189",
         image: B2,
-        description: "Durable aluminum bottle with print on one side – ideal for daily use."
+        description:
+          "Durable aluminum bottle with print on one side – ideal for daily use.",
       },
       {
         name: "Temperature Bottle 1 side",
         price: "₹319",
         image: B1,
-        description: "Smart temperature display bottle with one-side custom print."
+        description:
+          "Smart temperature display bottle with one-side custom print.",
       },
       {
         name: "Aluminium Bottle 2 sides",
         price: "₹219",
         image: B3,
-        description: "Printed aluminum bottle with designs on both sides."
+        description: "Printed aluminum bottle with designs on both sides.",
       },
       {
         name: "Temperature Bottle 2 sides",
         price: "₹349",
         image: B1,
-        description: "Double-side printed smart temperature bottle – stylish and practical."
-      }
-    ]
+        description:
+          "Double-side printed smart temperature bottle – stylish and practical.",
+      },
+    ],
   },
   {
     category: "Photo Frames",
@@ -107,9 +113,10 @@ const products = [
         name: "Glass Frame",
         price: "₹199",
         image: F1,
-        description: "Elegant glass photo frame – perfect for gifting and home décor."
-      }
-    ]
+        description:
+          "Elegant glass photo frame – perfect for gifting and home décor.",
+      },
+    ],
   },
   {
     category: "Plates",
@@ -118,9 +125,10 @@ const products = [
         name: "Ceramic Plate",
         price: "₹199",
         image: P1,
-        description: "Custom printed ceramic plate – great for decoration or gifting."
-      }
-    ]
+        description:
+          "Custom printed ceramic plate – great for decoration or gifting.",
+      },
+    ],
   },
   {
     category: "Badges",
@@ -129,16 +137,18 @@ const products = [
         name: "Badge 44mm",
         price: "₹10 per piece",
         image: Badge,
-        description: "Compact 44mm badges with full-color prints – ideal for events and branding."
+        description:
+          "Compact 44mm badges with full-color prints – ideal for events and branding.",
       },
       {
         name: "Badge 58mm",
         price: "₹13 per piece",
         image: Badge,
-        description: "Larger 58mm badges – vibrant and professional for promotions or gifts."
-      }
-    ]
-  }
+        description:
+          "Larger 58mm badges – vibrant and professional for promotions or gifts.",
+      },
+    ],
+  },
 ];
 
 const Print = () => {
@@ -148,17 +158,6 @@ const Print = () => {
 
   return (
     <div className="print-container">
-      {/* COD Notice */}
-      <div className="cod-notice">
-        <p>
-          <strong>Note:</strong> No Cash on Delivery available for printed
-          products. Please proceed with prepaid payment options only.
-        </p>
-        <p>
-          <strong>Note:</strong> ₹38 delivery charge applicable on every order.
-        </p>
-      </div>
-
       <h2 className="title">Product Showcase</h2>
 
       <div className="menu-buttons">
@@ -194,6 +193,16 @@ const Print = () => {
         ))}
       </div>
 
+      {/* COD Notice */}
+      <div className="cod-notice">
+        <p>
+          <strong>Note:</strong> No Cash on Delivery available for printed
+          products. Please proceed with prepaid payment options only.
+        </p>
+        <p>
+          <strong>Note:</strong> ₹38 delivery charge applicable on every order.
+        </p>
+      </div>
       {/* Contact Section */}
       <div className="contact-section">
         <p>
