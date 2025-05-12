@@ -191,7 +191,7 @@ const LmsHome = () => {
     },
     {
       name: "K. Srinivasa Reddy",
-      role: "Founder & Lead Developer",
+      role: "Lead Developer",
       company: "ORCADEHUB",
       image: Basha,
       description:
@@ -265,11 +265,11 @@ const LmsHome = () => {
                   text: "Certifications",
                   path: "/certificates",
                 },
-                {
-                  icon: <FaUsers size={40} />,
-                  text: "Community",
-                  path: "/community",
-                },
+                // {
+                //   icon: <FaUsers size={40} />,
+                //   text: "Community",
+                //   path: "/community",
+                // },
               ].map((item, index) => (
                 <Col
                   key={index}
