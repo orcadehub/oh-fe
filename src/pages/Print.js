@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Print.css";
+import config from "../config";
+import axios from "axios";
 import T1 from "../assets/prints/t1.jpg";
 import T2 from "../assets/prints/t2.jpg";
 import Cup1 from "../assets/prints/cup.jpg";
@@ -152,9 +154,29 @@ const products = [
 ];
 
 const Print = () => {
+
+  const baseURL =
+    process.env.NODE_ENV === "development"
+      ? config.LOCAL_BASE_URL
+      : config.BASE_URL;
   const [selectedCategory, setSelectedCategory] = useState("T-Shirts");
   const currentItems =
     products.find((p) => p.category === selectedCategory)?.items || [];
+
+  // Handle Payment using axios
+  const handlePayment = async (amount, productName) => {
+    try {
+      // Call the payment API using axios
+      const response = await axios.get(`${baseURL}/pay/${amount*100}`);
+      
+      if (response.data.checkoutPageUrl) {
+        // Redirect to the payment gateway checkout URL
+        window.location.href = response.data.checkoutPageUrl;
+      }
+    } catch (error) {
+      console.error("Payment API error:", error);
+    }
+  };
 
   return (
     <div className="print-container">
@@ -179,16 +201,12 @@ const Print = () => {
             <h4>{item.name}</h4>
             <p className="price">{item.price}</p>
             <p className="description">{item.description}</p>
-            <a
-              href={`https://wa.me/917093012101?text=Hello, I would like to buy: ${encodeURIComponent(
-                item.name + " - " + item.price
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => handlePayment(item.price.replace("₹", ""), item.name)}
               className="buy-now-button"
             >
               Buy Now
-            </a>
+            </button>
           </div>
         ))}
       </div>
@@ -203,6 +221,7 @@ const Print = () => {
           <strong>Note:</strong> ₹38 delivery charge applicable on every order.
         </p>
       </div>
+
       {/* Contact Section */}
       <div className="contact-section">
         <p>
