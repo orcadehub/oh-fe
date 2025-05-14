@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Payment = () => {
+const PaymentPage = () => {
   const [checkoutUrl, setCheckoutUrl] = useState("");
 
   // Function to initiate payment
   const initiatePayment = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3500/pay/500");  // Example amount of 500
+      const { data } = await axios.get("http://localhost:3500/pay/10");  // Example amount of 500
 
       // Redirect the user to the payment page
       window.location.href = data.checkoutPageUrl;
@@ -24,4 +24,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default PaymentPage;
