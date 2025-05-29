@@ -154,23 +154,43 @@ const products = [
 ];
 
 const Print = () => {
-
   const baseURL =
     process.env.NODE_ENV === "development"
       ? config.LOCAL_BASE_URL
       : config.BASE_URL;
   const [selectedCategory, setSelectedCategory] = useState("T-Shirts");
+  const [quantities, setQuantities] = useState({});
   const currentItems =
     products.find((p) => p.category === selectedCategory)?.items || [];
 
-  // Handle Payment using axios
-  const handlePayment = async (amount, productName) => {
+  const handleQuantityChange = (index, delta) => {
+    setQuantities((prev) => ({
+      ...prev,
+      [index]: Math.max(1, (prev[index] || 1) + delta),
+    }));
+  };
+
+  const handlePayment = async (amount, productName, quantity) => {
+    const userAddress = prompt("Enter your full delivery address:");
+    if (!userAddress || userAddress.trim() === "") {
+      alert("Address is required to proceed.");
+      return;
+    }
+
     try {
-      // Call the payment API using axios
-      const response = await axios.get(`${baseURL}/pay/${amount*100}`);
-      
+      const totalAmount = amount * quantity + 38; // ₹38 delivery charge
+      const response = await axios.get(`${baseURL}/pay/${totalAmount * 100}`);
+
       if (response.data.checkoutPageUrl) {
-        // Redirect to the payment gateway checkout URL
+        const orderDetails = {
+          product: productName,
+          quantity,
+          address: userAddress,
+          amount: totalAmount,
+          orderId: response.data.merchantOrderId,
+          date: new Date().toISOString(),
+        };
+        localStorage.setItem("latestOrder", JSON.stringify(orderDetails));
         window.location.href = response.data.checkoutPageUrl;
       }
     } catch (error) {
@@ -201,8 +221,19 @@ const Print = () => {
             <h4>{item.name}</h4>
             <p className="price">{item.price}</p>
             <p className="description">{item.description}</p>
+            <div className="quantity-selector">
+              <button onClick={() => handleQuantityChange(index, -1)}>-</button>
+              <span>{quantities[index] || 1}</span>
+              <button onClick={() => handleQuantityChange(index, 1)}>+</button>
+            </div>
             <button
-              onClick={() => handlePayment(item.price.replace("₹", ""), item.name)}
+              onClick={() =>
+                handlePayment(
+                  parseInt(item.price.replace(/[^\d]/g, ""), 10),
+                  item.name,
+                  quantities[index] || 1
+                )
+              }
               className="buy-now-button"
             >
               Buy Now
