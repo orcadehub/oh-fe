@@ -110,7 +110,7 @@ function Workshops() {
             ))}
           </Row>
         </Container>
-        <a href="https://forms.gle/XXs7EyTYWg9jQ8tH9">Click here to fill the form</a>
+        {/* <a href="https://forms.gle/XXs7EyTYWg9jQ8tH9">Click here to fill the form</a> */}
       </section>
     </div>
   );
