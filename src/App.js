@@ -24,6 +24,7 @@ import Intro from "./components/Intro";
 import Print from "./pages/Print";
 import TC from "./pages/TC";
 import PAP from "./pages/PAP";
+import CPpage from "./pages/CPpage";
 
 function Layout() {
   const location = useLocation();
@@ -44,6 +45,7 @@ function Layout() {
         <Route path="/workshops" element={<Workshop />} />
         <Route path="/add-internship" element={<AddInternship />} />
         <Route path="/printing" element={<Print />} />
+        <Route path="/customer-payment" element={<CPpage />} />
         <Route path="/verify/certificate" element={<Certi />} />
         <Route path="/download/certificate" element={<Certi />} />
         <Route path="/certificate/:certiid" element={<Certi />} />
