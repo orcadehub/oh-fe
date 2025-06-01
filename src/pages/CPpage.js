@@ -24,7 +24,7 @@ const CPpage = () => {
     
 
     try {
-      const totalAmount = 400; // ₹38 delivery charge
+      const totalAmount = 35400; // ₹38 delivery charge
       const response = await axios.get(`${baseURL}/pay/${totalAmount * 100}`);
 
       if (response.data.checkoutPageUrl) {
