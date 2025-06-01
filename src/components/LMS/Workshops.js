@@ -1,8 +1,8 @@
 import React from "react";
 import { FaCalendarAlt, FaWhatsapp } from "react-icons/fa";
-
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
+
 function Workshops() {
   const workshops = [
     {
@@ -14,7 +14,7 @@ function Workshops() {
     {
       title: "1-Day Mobile App Dev Demo",
       date: "May 21, 2025",
-      mentor: "Srinivas",
+      mentor: "Gurram Ajith Kumar",
       link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
     },
     {

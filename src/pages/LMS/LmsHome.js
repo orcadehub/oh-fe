@@ -189,14 +189,14 @@ const LmsHome = () => {
       description:
         "Expert in MERN Stack development with 3+ years of experience.Trained more than 10000+ students.",
     },
-    {
-      name: "K. Srinivasa Reddy",
-      role: "Lead Developer",
-      company: "ORCADEHUB",
-      image: Basha,
-      description:
-        "Expert in MERN Stack development with 3+ years of experience.Trained more than 10000+ students.",
-    },
+    // {
+    //   name: "K. Srinivasa Reddy",
+    //   role: "Lead Developer",
+    //   company: "ORCADEHUB",
+    //   image: Basha,
+    //   description:
+    //     "Expert in MERN Stack development with 3+ years of experience.Trained more than 10000+ students.",
+    // },
     {
       name: "Shivam Chanchal",
       role: "Techinical Lead",
