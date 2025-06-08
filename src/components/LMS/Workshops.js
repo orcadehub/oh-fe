@@ -6,22 +6,22 @@ import { motion } from "framer-motion";
 function Workshops() {
   const workshops = [
     {
+      title: "2-Day HTML",
+      date: "June 13 - June 15, 2025",
+      mentor: "Gurram Ajith Kumar",
+      link: "https://chat.whatsapp.com/KSp9mWZJ2PC4o3QVNq3cdp",
+    },
+    {
+      title: "2-Day CSS",
+      date: "June 16 - June 18, 2025",
+      mentor: "Gurram Ajith Kumar",
+      link: "https://chat.whatsapp.com/KSp9mWZJ2PC4o3QVNq3cdp",
+    },
+    {
       title: "3-Day Java Script",
-      date: "May 13 - April 15, 2025",
+      date: "June 19 - June 22, 2025",
       mentor: "Gurram Ajith Kumar",
-      link: "https://chat.whatsapp.com/B7zpS6LGcZP4i3fKYO2ius",
-    },
-    {
-      title: "1-Day Mobile App Dev Demo",
-      date: "May 21, 2025",
-      mentor: "Gurram Ajith Kumar",
-      link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
-    },
-    {
-      title: "1-Day MERN tack Demo",
-      date: "May 16, 2025",
-      mentor: "Gurram Ajith Kumar",
-      link: "https://chat.whatsapp.com/Hq7oKeXqjGJJVIUbQENtJr",
+      link: "https://chat.whatsapp.com/KSp9mWZJ2PC4o3QVNq3cdp",
     },
   ];
   return (
@@ -41,7 +41,10 @@ function Workshops() {
 
           {/* Certification Info */}
           <div className="mt-5">
-            <h4>🔖 Licensed <span className="text-danger">FREE</span> Certification Provided</h4>
+            <h4>
+              🔖 Licensed <span className="text-danger">FREE</span>{" "}
+              Certification Provided
+            </h4>
             <p>
               Receive an officially licensed certificate upon successful
               completion.

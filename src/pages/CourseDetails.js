@@ -1,20 +1,27 @@
 import { useParams } from "react-router-dom";
-import { Container, Row, Col, Card, Button, Modal,Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  Modal,
+  Form,
+} from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./CourseDetails.css";
-// import axios from "axios";
-// import config from "../config";
-import courseData from './courseData';
+import axios from "axios";
+import config from "../config";
+import courseData from "./courseData";
 
 const CourseDetails = () => {
-
   const getBatchStartDate = () => {
     const today = new Date();
     let year = today.getFullYear();
     let month = today.getMonth(); // 0-based index (Jan = 0, Dec = 11)
     let day = today.getDate();
-  
+
     // If today is past the 20th, move to the next month
     if (day > 20) {
       month += 1;
@@ -24,124 +31,46 @@ const CourseDetails = () => {
         year += 1;
       }
     }
-  
+
     const monthName = new Date(year, month).toLocaleString("default", {
       month: "long",
     });
-  
+
     return `20th ${monthName}, ${year}`;
   };
 
-  
+  const baseURL =
+    process.env.NODE_ENV === "development"
+      ? config.LOCAL_BASE_URL
+      : config.BASE_URL;
 
-  // const baseURL =
-  //   process.env.NODE_ENV === "development"
-  //     ? config.LOCAL_BASE_URL
-  //     : config.BASE_URL;
+  const [installmentType, setInstallmentType] = useState("full");
 
-      const [installmentType, setInstallmentType] = useState("full");
+  const handleEnrollClick = async () => {
+    const totalAmount = course.price;
+    const courseName = course.title;
 
-      const handleEnrollClick = () => {
-        const message = encodeURIComponent(
-          `Hello sir, I want to enroll in ${course.title} and I want to choose the ${installmentType} installment type.`
-        );
-        window.open(`https://wa.me/917093012101?text=${message}`, "_blank");
-      };
+    try {
+      const response = await axios.get(`${baseURL}/pay/${totalAmount * 100}`);
 
-  // const [responseId, setResponseId] = useState("");
-  // const [responseState, setResponseState] = useState([]);
-
-  // const loadScript = (src) => {
-  //   return new Promise((resolve) => {
-  //     const script = document.createElement("script");
-
-  //     script.src = src;
-
-  //     script.onload = () => {
-  //       resolve(true);
-  //     };
-  //     script.onerror = () => {
-  //       resolve(false);
-  //     };
-
-  //     document.body.appendChild(script);
-  //   });
-  // };
-
-  // const createRazorpayOrder = (amount) => {
-  //   let data = JSON.stringify({
-  //     amount: amount * 100,
-  //     currency: "INR",
-  //   });
-
-  //   let config = {
-  //     method: "post",
-  //     maxBodyLength: Infinity,
-  //     url: `${baseURL}/orders`,
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     data: data,
-  //   };
-
-  //   axios
-  //     .request(config)
-  //     .then((response) => {
-  //       console.log(JSON.stringify(response.data));
-  //       handleRazorpayScreen(response.data.amount);
-  //     })
-  //     .catch((error) => {
-  //       console.log("error at", error);
-  //     });
-  // };
-
-  // const handleRazorpayScreen = async (amount) => {
-  //   const res = await loadScript("https:/checkout.razorpay.com/v1/checkout.js");
-
-  //   if (!res) {
-  //     alert("Some error at razorpay screen loading");
-  //     return;
-  //   }
-
-  //   const options = {
-  //     key: "rzp_test_KZWfJv1KGDv6La",
-  //     amount: amount,
-  //     currency: "INR",
-  //     name: "OrcadeHub",
-  //     description: "payment to OrcadeHub",
-  //     image:
-  //       "https://www.orcadehub.com/static/media/log.a4a397196354c6736694.png",
-  //     handler: function (response) {
-  //       setResponseId(response.razorpay_payment_id);
-  //     },
-  //     prefill: {
-  //       name: "papaya coders",
-  //       email: "papayacoders@gmail.com",
-  //     },
-  //     theme: {
-  //       color: "#6a0dad",
-  //     },
-  //   };
-
-  //   const paymentObject = new window.Razorpay(options);
-  //   paymentObject.open();
-  // };
-
-  // const paymentFetch = (e) => {
-  //   e.preventDefault();
-
-  //   const paymentId = e.target.paymentId.value;
-
-  //   axios
-  //     .get(`${baseURL}/payment/${paymentId}`)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setResponseState(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log("error occures", error);
-  //     });
-  // };
+      if (response.data.checkoutPageUrl) {
+        const orderDetails = {
+          course: courseName,
+          installmentType,
+          amount: totalAmount,
+          orderId: response.data.merchantOrderId,
+          date: new Date().toISOString(),
+        };
+        localStorage.setItem("latestOrder", JSON.stringify(orderDetails));
+        window.location.href = response.data.checkoutPageUrl;
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Payment API Error:", error);
+      alert("Payment initiation failed.");
+    }
+  };
 
   const { courseId } = useParams();
   const course = courseData[courseId];
@@ -168,18 +97,6 @@ const CourseDetails = () => {
       });
     };
   }, []);
-
-  // const handleUPIPayment = () => {
-  //   if (!course) return;
-
-  //   const upiURL = `upi://pay?pa=${
-  //     course.upiId
-  //   }&pn=OrcadeHub&mc=&tid=&tr=&tn=Course%20Enrollment%20${
-  //     course.title
-  //   }&am=${course.price.replace("₹", "")}&cu=INR`;
-
-  //   window.location.href = upiURL; // Redirect to UPI Payment
-  // };
 
   if (!course) {
     return (
@@ -258,52 +175,55 @@ const CourseDetails = () => {
       </div>
 
       <Modal show={showModal} onHide={handleClose} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>Enroll in {course.title}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p>
-          <strong>📅 Duration:</strong> {course.duration}
-        </p>
-        <p>
-          <strong>💰 Price:</strong> {course.price}
-        </p>
-        <p>
-          <strong>🚀 Next Batch Starts:</strong> {getBatchStartDate()}
-        </p>
-        <p>
-          🔹 Secure your seat now and begin your learning journey with
-          <strong> OrcadeHub!</strong>
-        </p>
+        <Modal.Header closeButton>
+          <Modal.Title>Enroll in {course.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            <strong>📅 Duration:</strong> {course.duration}
+          </p>
+          <p>
+            <strong>💰 Price:</strong> {course.price}
+          </p>
+          <p>
+            <strong>🚀 Next Batch Starts:</strong> {getBatchStartDate()}
+          </p>
+          <p>
+            🔹 Secure your seat now and begin your learning journey with
+            <strong> OrcadeHub!</strong>
+          </p>
 
-        {course.price === "₹5,999" ? (
-  <Form.Group>
-    <Form.Label>Select Installment Type</Form.Label>
-    <Form.Control
-      as="select"
-      value={installmentType}
-      onChange={(e) => setInstallmentType(e.target.value)}
-    >
-      <option value="full">Full Payment - ₹6000 at once</option>
-      <option value="two">2 Installments - ₹3000/month for 2 months</option>
-      <option value="three">3 Installments - ₹2000/month for 3 months</option>
-    </Form.Control>
-  </Form.Group>
-) : (
-  <p>Course Fee: {course.price}</p>
-)}
+          {course.price === "₹5,999" ? (
+            <Form.Group>
+              <Form.Label>Select Installment Type</Form.Label>
+              <Form.Control
+                as="select"
+                value={installmentType}
+                onChange={(e) => setInstallmentType(e.target.value)}
+              >
+                <option value="full">Full Payment - ₹6000 at once</option>
+                <option value="two">
+                  2 Installments - ₹3000/month for 2 months
+                </option>
+                <option value="three">
+                  3 Installments - ₹2000/month for 3 months
+                </option>
+              </Form.Control>
+            </Form.Group>
+          ) : (
+            <p>Course Fee: {course.price}</p>
+          )}
+        </Modal.Body>
 
-      </Modal.Body>
-
-      <Modal.Footer>
-        <Button variant="danger" onClick={handleClose}>
-          Cancel
-        </Button>
-        <Button className="enroll-button" onClick={handleEnrollClick}>
-          Proceed to Enroll
-        </Button>
-      </Modal.Footer>
-    </Modal>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button className="enroll-button" onClick={handleEnrollClick}>
+            Proceed to Enroll
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

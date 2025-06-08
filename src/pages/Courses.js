@@ -39,6 +39,25 @@ const getBatchStartDate = () => {
 
 const courses = [
   {
+    id: "mern-stack-30days",
+    title: "MERN Stack Development",
+    image: Mern,
+    description: "Master MongoDB, Express.js, React, and Node.js from scratch.",
+    duration: "30 Days",
+    price: "₹299",
+    batchStart: getBatchStartDate(),
+  },
+  {
+    id: "python-django-30days",
+    title: "Python & Django",
+    image: Py,
+    description:
+      "Build dynamic web applications using Python and Django framework.",
+    duration: "30 Days",
+    price: "₹299",
+    batchStart: getBatchStartDate(),
+  },
+  {
     id: "mern-stack",
     title: "MERN Stack Development",
     image: Mern,
@@ -47,26 +66,26 @@ const courses = [
     price: "₹5,999",
     batchStart: getBatchStartDate(),
   },
-  {
-    id: "react-native",
-    title: "React Native Development",
-    image: Rn,
-    description:
-      "Learn to build cross-platform mobile apps using React Native.",
-    duration: "6 Months",
-    price: "₹5,999",
-    batchStart: getBatchStartDate(),
-  },
-  {
-    id: "sap-r2r",
-    title: "SAP R2R Training",
-    image: Sap,
-    description:
-      "Gain expertise in SAP Record to Report (R2R) with real-world projects.",
-    duration: "45 Days",
-    price: "₹1,499",
-    batchStart: getBatchStartDate(),
-  },
+  // {
+  //   id: "react-native",
+  //   title: "React Native Development",
+  //   image: Rn,
+  //   description:
+  //     "Learn to build cross-platform mobile apps using React Native.",
+  //   duration: "6 Months",
+  //   price: "₹5,999",
+  //   batchStart: getBatchStartDate(),
+  // },
+  // {
+  //   id: "sap-r2r",
+  //   title: "SAP R2R Training",
+  //   image: Sap,
+  //   description:
+  //     "Gain expertise in SAP Record to Report (R2R) with real-world projects.",
+  //   duration: "45 Days",
+  //   price: "₹1,499",
+  //   batchStart: getBatchStartDate(),
+  // },
   {
     id: "python-django",
     title: "Python & Django",
@@ -96,43 +115,43 @@ const courses = [
     price: "₹1,499",
     batchStart: getBatchStartDate(),
   },
-  {
-    id: "c-dsa",
-    title: "C with DSA",
-    image: Cdsa,
-    description: "Strengthen your fundamentals with C and Data Structures.",
-    duration: "45 Days",
-    price: "₹1,499",
-    batchStart: getBatchStartDate(),
-  },
-  {
-    id: "cpp-dsa",
-    title: "C++ with DSA",
-    image: Cppdsa,
-    description: "Learn competitive coding and advanced algorithms with C++.",
-    duration: "45 Days",
-    price: "₹1,499",
-    batchStart: getBatchStartDate(),
-  },
-  {
-    id: "uiux",
-    title: "UI/UX Design",
-    image: Ui,
-    description:
-      "Learn modern UI/UX principles and build user-friendly interfaces.",
-    duration: "45 Days",
-    price: "₹2,999",
-    batchStart: getBatchStartDate(),
-  },
-  {
-    id: "flutter",
-    title: "Flutter Mobile App Development",
-    image: MobileApp,
-    description: "Build mobile applications for Android & iOS using Flutter.",
-    duration: "45 Days",
-    price: "₹2,999",
-    batchStart: getBatchStartDate(),
-  },
+  // {
+  //   id: "c-dsa",
+  //   title: "C with DSA",
+  //   image: Cdsa,
+  //   description: "Strengthen your fundamentals with C and Data Structures.",
+  //   duration: "45 Days",
+  //   price: "₹1,499",
+  //   batchStart: getBatchStartDate(),
+  // },
+  // {
+  //   id: "cpp-dsa",
+  //   title: "C++ with DSA",
+  //   image: Cppdsa,
+  //   description: "Learn competitive coding and advanced algorithms with C++.",
+  //   duration: "45 Days",
+  //   price: "₹1,499",
+  //   batchStart: getBatchStartDate(),
+  // },
+  // {
+  //   id: "uiux",
+  //   title: "UI/UX Design",
+  //   image: Ui,
+  //   description:
+  //     "Learn modern UI/UX principles and build user-friendly interfaces.",
+  //   duration: "45 Days",
+  //   price: "₹2,999",
+  //   batchStart: getBatchStartDate(),
+  // },
+  // {
+  //   id: "flutter",
+  //   title: "Flutter Mobile App Development",
+  //   image: MobileApp,
+  //   description: "Build mobile applications for Android & iOS using Flutter.",
+  //   duration: "45 Days",
+  //   price: "₹2,999",
+  //   batchStart: getBatchStartDate(),
+  // },
 ];
 
 const Courses = () => {
@@ -187,6 +206,10 @@ const Courses = () => {
                     <p>
                       <strong>🚀 Next Batch Starts:</strong> {course.batchStart}
                     </p>
+                    <button class="btn btn-primary px-4 py-2 rounded shadow-sm">
+  View More Details
+</button>
+
                   </Card.Body>
                 </Card>
               </motion.div>
