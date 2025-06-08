@@ -127,7 +127,7 @@ const CourseDetails = () => {
         <strong>📅 Duration:</strong> {course.duration}
       </p>
       <p>
-        <strong>💰 Price:</strong> {course.price}
+        <strong>💰 Price:</strong> ₹{course.price}
       </p>
       <p>
         <strong>🚀 Next Batch Starts:</strong> {getBatchStartDate()}
@@ -184,7 +184,7 @@ const CourseDetails = () => {
             <strong>📅 Duration:</strong> {course.duration}
           </p>
           <p>
-            <strong>💰 Price:</strong> {course.price}
+            <strong>💰 Price:</strong> ₹{course.price}
           </p>
           <p>
             <strong>🚀 Next Batch Starts:</strong> {getBatchStartDate()}
@@ -194,7 +194,7 @@ const CourseDetails = () => {
             <strong> OrcadeHub!</strong>
           </p>
 
-          {course.price === "₹5,999" ? (
+          {course.price === 5999 ? (
             <Form.Group>
               <Form.Label>Select Installment Type</Form.Label>
               <Form.Control
@@ -212,7 +212,7 @@ const CourseDetails = () => {
               </Form.Control>
             </Form.Group>
           ) : (
-            <p>Course Fee: {course.price}</p>
+            <p>Course Fee: ₹{course.price}</p>
           )}
         </Modal.Body>
 

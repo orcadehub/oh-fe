@@ -6,7 +6,7 @@ const courseData = {
     description:
       "Master MongoDB, Express.js, React, and Node.js with hands-on projects and real-world applications.",
     duration: "30 Days",
-    price: "₹299",
+    price: 299,
     batchStart: "April 10, 2024",
     skills: [
       "MongoDB",
@@ -80,7 +80,7 @@ const courseData = {
     description:
       "Master MongoDB, Express.js, React, and Node.js with hands-on projects and real-world applications.",
     duration: "6 Months (4 Months Training + 2 Months Internship)",
-    price: "₹5,999",
+    price: 5999,
     batchStart: "April 10, 2024",
     skills: [
       "MongoDB",
@@ -214,16 +214,23 @@ const courseData = {
     description:
       "Learn Python and Django for full-stack development, including databases, API integration, and deployment.",
     duration: "6 Months (4 Months Training + 2 Months Internship)",
-    price: "₹5,999",
+    price: 5999,
     batchStart: "April 12, 2024",
     skills: [
-      "Python",
+      "MongoDB",
       "Django",
-      "SQL",
-      "JavaScript",
       "React.js",
+      "Node.js",
+      "REST APIs",
       "Git & GitHub",
-      "Cloud Deployment",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Redux",
+      "Vite",
+      "Postman",
     ],
     roadmap: [
       {
@@ -245,6 +252,79 @@ const courseData = {
       {
         month: "Month 5-6",
         details: "Internship - Work on live industry projects.",
+      },
+    ],
+    benefits: [
+      "Real-time Django projects",
+      "Internship & placement support",
+      "Industry-relevant projects",
+    ],
+  },
+
+  "python-django-30days": {
+    title: "Python & Django Full Stack",
+    description:
+      "Learn Python and Django for full-stack development, including databases, API integration, and deployment.",
+    duration: "30 Days",
+    price: 299,
+    batchStart: "April 12, 2024",
+    skills: [
+      "MongoDB",
+      "Django",
+      "React.js",
+      "Node.js",
+      "REST APIs",
+      "Git & GitHub",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Redux",
+      "Vite",
+      "Postman",
+    ],
+    roadmap: [
+      { month: "Day 1-3", details: "HTML5: Elements, Forms, Semantic Tags" },
+      {
+        month: "Day 4-6",
+        details: "CSS3: Layouts, Flexbox, Grid, Media Queries",
+      },
+      {
+        month: "Day 7-9",
+        details: "JavaScript Basics: Variables, Loops, Functions, DOM",
+      },
+      {
+        month: "Day 10-12",
+        details: "JavaScript Advanced: ES6+, Events, Promises, Fetch API",
+      },
+      { month: "Day 13-14", details: "Bootstrap & Responsive UI Components" },
+
+      {
+        month: "Day 15-16",
+        details: "React.js: Components, Props, State, Events",
+      },
+      {
+        month: "Day 17-18",
+        details: "React Hooks: useState, useEffect, Conditional Rendering",
+      },
+      { month: "Day 19-20", details: "React Router & Basic Projects" },
+      { month: "Day 21", details: "Redux Basics: Store, Actions, Reducers" },
+      { month: "Day 22", details: "Redux Integration with React" },
+
+      { month: "Day 23", details: "Vite Setup & Optimized Development" },
+      { month: "Day 24-25", details: "Node.js: Modules, File System, Events" },
+      { month: "Day 26", details: "Django: Views, URLs, REST APIs with Django REST Framework" },
+      { month: "Day 27", details: "MongoDB: CRUD, Mongoose Models" },
+      { month: "Day 28", details: "Postman: API Testing & Documentation" },
+
+      {
+        month: "Day 29",
+        details: "Git & GitHub: Repositories, Branching, Commits",
+      },
+      {
+        month: "Day 30",
+        details: "Deployment: Netlify, Render, GitHub Pages Overview",
       },
     ],
     benefits: [
