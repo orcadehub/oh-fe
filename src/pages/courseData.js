@@ -340,7 +340,7 @@ const courseData = {
     description:
       "Learn Data Structures and Algorithms with Python for coding interviews.",
     duration: "45 Days",
-    price: "₹1,499",
+    price: 1499,
     batchStart: "April 5, 2024",
     skills: [
       "Python",
@@ -370,7 +370,7 @@ const courseData = {
     title: "Java with DSA",
     description: "Master Java programming and problem-solving techniques.",
     duration: "45 Days",
-    price: "₹1,499",
+    price: 1499,
     batchStart: "April 8, 2024",
     skills: ["Java", "Data Structures", "Algorithms", "Competitive Coding"],
     roadmap: [

@@ -48,7 +48,7 @@ const CourseDetails = () => {
 
   const handleEnrollClick = async () => {
     const totalAmount = course.price;
-    console.log(course.price)
+    console.log(course.price);
     const courseName = course.title;
 
     try {
@@ -194,26 +194,7 @@ const CourseDetails = () => {
             <strong> OrcadeHub!</strong>
           </p>
 
-          {course.price === 5999 ? (
-            <Form.Group>
-              <Form.Label>Select Installment Type</Form.Label>
-              <Form.Control
-                as="select"
-                value={installmentType}
-                onChange={(e) => setInstallmentType(e.target.value)}
-              >
-                <option value="full">Full Payment - ₹6000 at once</option>
-                <option value="two">
-                  2 Installments - ₹3000/month for 2 months
-                </option>
-                <option value="three">
-                  3 Installments - ₹2000/month for 3 months
-                </option>
-              </Form.Control>
-            </Form.Group>
-          ) : (
-            <p>Course Fee: ₹{course.price}</p>
-          )}
+          <p>Course Fee: ₹{course.price}</p>
         </Modal.Body>
 
         <Modal.Footer>
