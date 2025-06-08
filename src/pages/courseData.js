@@ -255,9 +255,19 @@ const courseData = {
       },
     ],
     benefits: [
-      "Real-time Django projects",
-      "Internship & placement support",
-      "Industry-relevant projects",
+      "Hands-on project experience",
+      "Certificate of completion",
+      "Placement assistance",
+      "Flexible payment options",
+      "2 months guaranteed internship",
+      "Live classes with expert mentors",
+      "Doubt-clearing sessions",
+      "Resume building support",
+      "Interview preparation guidance",
+      "Access to recorded sessions",
+      "Surprise gifts during internship",
+      "Top performer rewards & cash prizes",
+      "Real-world project portfolio",
     ],
   },
 
@@ -314,7 +324,10 @@ const courseData = {
 
       { month: "Day 23", details: "Vite Setup & Optimized Development" },
       { month: "Day 24-25", details: "Node.js: Modules, File System, Events" },
-      { month: "Day 26", details: "Django: Views, URLs, REST APIs with Django REST Framework" },
+      {
+        month: "Day 26",
+        details: "Django: Views, URLs, REST APIs with Django REST Framework",
+      },
       { month: "Day 27", details: "MongoDB: CRUD, Mongoose Models" },
       { month: "Day 28", details: "Postman: API Testing & Documentation" },
 

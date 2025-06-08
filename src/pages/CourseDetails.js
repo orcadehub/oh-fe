@@ -145,18 +145,14 @@ const CourseDetails = () => {
 
       {/* Roadmap */}
       <h4>Course Roadmap</h4>
-      <Row>
+      <div className="roadmap-container">
         {course.roadmap.map((phase, index) => (
-          <Col md={6} key={index}>
-            <Card className="roadmap-card shadow-sm mb-3">
-              <Card.Body>
-                <h5>{phase.month}</h5>
-                <p>{phase.details}</p>
-              </Card.Body>
-            </Card>
-          </Col>
+          <div className="roadmap-card" key={index}>
+            <h5>{phase.month}</h5>
+            <p>{phase.details}</p>
+          </div>
         ))}
-      </Row>
+      </div>
 
       {/* Benefits */}
       <h4>Course Benefits</h4>
@@ -169,7 +165,7 @@ const CourseDetails = () => {
       </ul>
 
       {/* Enroll Button */}
-      <div className="text-center mt-4">
+      <div className="text-center my-4">
         <Button onClick={handleShow} className="enroll-button">
           Enroll Now
         </Button>
