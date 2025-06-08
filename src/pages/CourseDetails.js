@@ -48,6 +48,7 @@ const CourseDetails = () => {
 
   const handleEnrollClick = async () => {
     const totalAmount = course.price;
+    console.log(course.price)
     const courseName = course.title;
 
     try {

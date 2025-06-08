@@ -44,7 +44,7 @@ const courses = [
     image: Mern,
     description: "Master MongoDB, Express.js, React, and Node.js from scratch.",
     duration: "30 Days",
-    price: "₹299",
+    price: 299,
     batchStart: getBatchStartDate(),
   },
   {
@@ -54,7 +54,7 @@ const courses = [
     description:
       "Build dynamic web applications using Python and Django framework.",
     duration: "30 Days",
-    price: "₹299",
+    price: 299,
     batchStart: getBatchStartDate(),
   },
   {
@@ -63,7 +63,7 @@ const courses = [
     image: Mern,
     description: "Master MongoDB, Express.js, React, and Node.js from scratch.",
     duration: "6 Months",
-    price: "₹5,999",
+    price: 5999,
     batchStart: getBatchStartDate(),
   },
   // {
@@ -93,7 +93,7 @@ const courses = [
     description:
       "Build dynamic web applications using Python and Django framework.",
     duration: "6 Months",
-    price: "₹5,999",
+    price: 5999,
     batchStart: getBatchStartDate(),
   },
   {
@@ -103,7 +103,7 @@ const courses = [
     description:
       "Learn Data Structures and Algorithms with Python for coding interviews.",
     duration: "45 Days",
-    price: "₹1,499",
+    price: 1499,
     batchStart: getBatchStartDate(),
   },
   {
@@ -112,7 +112,7 @@ const courses = [
     image: Javadsa,
     description: "Master Java programming and problem-solving techniques.",
     duration: "45 Days",
-    price: "₹1,499",
+    price: 1499,
     batchStart: getBatchStartDate(),
   },
   // {
@@ -201,7 +201,7 @@ const Courses = () => {
                       <strong>📅 Duration:</strong> {course.duration}
                     </p>
                     <p>
-                      <strong>💰 Price:</strong> {course.price}
+                      <strong>💰 Price:</strong>₹{course.price}
                     </p>
                     <p>
                       <strong>🚀 Next Batch Starts:</strong> {course.batchStart}
