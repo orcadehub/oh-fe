@@ -5,6 +5,7 @@ import { FaUsers, FaLaptopCode, FaBriefcase, FaUniversity, FaQuoteLeft } from "r
 import "./Home.css"; // Import CSS file
 import Testi from "../components/Testi";
 
+
 const Home = () => {
   return (
     <motion.div
@@ -13,6 +14,7 @@ const Home = () => {
       exit={{ opacity: 0, scale: 0.9, rotate: 2 }}
       transition={{ duration: 1 }}
     >
+  
   
       {/* Hero Section */}
       <section className="hero-section">

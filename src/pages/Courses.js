@@ -1,10 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card,Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Courses.css"; // Custom styling
 import Mern from "../assets/mern.jpg";
 import Py from "../assets/python.jpg";
+import Marquee from "react-fast-marquee"; // install via: npm install react-fast-marquee
+
 // import Dsa from "../assets/dsa.jpg";
 import Ui from "../assets/uiux.jpg";
 import Sap from "../assets/sap.jpg";
@@ -163,6 +165,23 @@ const Courses = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
+      {/* Marquee Banner */}
+      <Marquee gradient={false} speed={50} className="bg-dark text-white py-2">
+        <div className="d-flex align-items-center justify-content-between w-100 px-3">
+          <span className="me-3 fw-bold">
+            📣 Enroll here for next MERN Stack Batch!
+          </span>
+          <Button
+            variant="success"
+            size="sm"
+            href="https://chat.whatsapp.com/GofWpzihMj43MaHNJ5NYap?mode=ac_t"
+            target="_blank"
+          >
+            Join WhatsApp Group
+          </Button>
+        </div>
+      </Marquee>
+
       <Container className="mt-5">
         <motion.h2
           className="text-center mb-4"
@@ -207,9 +226,8 @@ const Courses = () => {
                       <strong>🚀 Next Batch Starts:</strong> {course.batchStart}
                     </p>
                     <button class="btn btn-primary px-4 py-2 rounded shadow-sm">
-  View More Details
-</button>
-
+                      View More Details
+                    </button>
                   </Card.Body>
                 </Card>
               </motion.div>
